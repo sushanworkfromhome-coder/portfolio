@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edge Smart Space | The Future of Intelligent Living</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            cyan: '#06b6d4',
+                            indigo: '#6366f1',
+                            teal: '#14b8a6',
+                            glow: '#22d3ee',
+                        },
+                        dark: {
+                            base: '#07090e',
+                            surface: '#0f172a',
+                            card: 'rgba(15, 23, 42, 0.65)',
+                            border: 'rgba(51, 65, 85, 0.6)'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-glow': 'pulseGlow 4s ease-in-out infinite alternate',
+                        'float': 'float 6s ease-in-out infinite',
+                        'scanline': 'scan 8s linear infinite',
+                    },
+                    keyframes: {
+                        pulseGlow: {
+                            '0%': { boxShadow: '0 0 15px rgba(6, 182, 212, 0.2)' },
+                            '100%': { boxShadow: '0 0 35px rgba(99, 102, 241, 0.5)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        scan: {
+                            '0%': { transform: 'translateY(-100%)' },
+                            '100%': { transform: 'translateY(1000%)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #07090e;
+        color: #f1f5f9;
+        overflow-x: hidden;
+        /* Firefox Scrollbar Support */
+        scrollbar-width: thin;
+        scrollbar-color: #1e293b #07090e;
+    }
+    
+    h1, h2, h3, h4, .font-heading {
+        font-family: 'Outfit', sans-serif;
+    }
+
+    /* Glassmorphism Classes */
+    .glass-panel {
+        background: rgba(15, 23, 42, 0.65);
+        -webkit-backdrop-filter: blur(16px);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .glass-card {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .glass-card:hover {
+        border-color: rgba(6, 182, 212, 0.4);
+        box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.25);
+    }
+
+    /* Neon Text Glow */
+    .neon-text {
+        text-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
+    }
+
+    /* Custom Range Input (Standardized + Cross-Browser) */
+    input[type=range] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: transparent;
+        width: 100%;
+    }
+
+    /* WebKit (Chrome, Safari, Edge) Slider Styling */
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        height: 22px;
+        width: 22px;
+        border-radius: 50%;
+        background: #06b6d4;
+        cursor: pointer;
+        box-shadow: 0 0 12px #06b6d4;
+        margin-top: -8px;
+        border: none;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 6px;
+        cursor: pointer;
+        background: #1e293b;
+        border-radius: 4px;
+    }
+
+    /* Firefox Slider Styling */
+    input[type=range]::-moz-range-thumb {
+        height: 22px;
+        width: 22px;
+        border-radius: 50%;
+        background: #06b6d4;
+        cursor: pointer;
+        box-shadow: 0 0 12px #06b6d4;
+        border: none;
+    }
+    input[type=range]::-moz-range-track {
+        width: 100%;
+        height: 6px;
+        cursor: pointer;
+        background: #1e293b;
+        border-radius: 4px;
+    }
+
+    /* WebKit Scrollbar Styling */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #07090e;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #1e293b;
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #06b6d4;
+    }
+</style>
+</head>
+<body class="relative min-h-screen text-slate-100 selection:bg-cyan-500 selection:text-black">
+
+    <!-- Background Canvas Particles & Light Blobs -->
+    <canvas id="bgCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
+    
+    <!-- Ambient Glow Orbs -->
+    <div class="fixed top-1/4 -left-32 w-96 h-96 bg-cyan-500/15 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="fixed bottom-1/3 -right-32 w-96 h-96 bg-indigo-600/15 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="fixed top-2/3 left-1/3 w-80 h-80 bg-teal-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="relative z-10 flex flex-col min-h-screen">
+        
+        <!-- Header -->
+        <header class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-4">
+            <div class="glass-panel rounded-2xl px-6 py-4 flex items-center justify-between shadow-xl">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-house-signal text-lg"></i>
+                    </div>
+                    <span class="font-heading text-2xl font-bold tracking-tight text-white">
+                        Edge Smart <span class="text-cyan-400">Space</span>
+                    </span>
+                </a>
+
+                <!-- Launch Badge & Status -->
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:flex items-center space-x-2 px-3 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-xs font-medium text-cyan-300">
+                        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                        <span>Private Beta Q3 2026</span>
+                    </div>
+                    <a href="#waitlist" class="px-4 py-2 text-sm font-semibold rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white transition-all duration-300 shadow-md shadow-cyan-500/20 hover:shadow-cyan-500/40">
+                        Get Early Access
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Wrapper -->
+        <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 space-y-24 py-8">
+
+            <!-- HERO SECTION -->
+            <section class="text-center pt-8 md:pt-16 max-w-4xl mx-auto">
+                
+                <!-- Tag Banner -->
+                <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-panel border border-cyan-500/30 mb-8 animate-float">
+                    <i class="fa-solid fa-wand-magic-sparkles text-cyan-400 text-sm"></i>
+                    <span class="text-xs sm:text-sm font-medium text-slate-300">Next-Gen Ambient Living System</span>
+                </div>
+
+                <!-- Main Tagline -->
+                <h1 class="font-heading text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-tight text-white mb-6">
+                    The Future of <br class="hidden sm:inline"/>
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-400 neon-text">
+                        Intelligent Living
+                    </span> 
+                    Is Almost Here.
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto font-light leading-relaxed mb-10">
+                    EdgeSmartSpace unifies zero-latency automation, predictive AI climate management, and ultra-secure biometric locks into one breathtaking spatial interface.
+                </p>
+
+                <!-- Live Countdown Timer -->
+                <div class="mb-12">
+                    <p class="text-xs uppercase tracking-widest text-cyan-400 font-semibold mb-4">Official Launch In</p>
+                    <div class="grid grid-cols-4 gap-3 sm:gap-6 max-w-md sm:max-w-xl mx-auto">
+                        <div class="glass-panel p-3 sm:p-5 rounded-2xl border border-slate-800 text-center group hover:border-cyan-500/40 transition-colors">
+                            <span id="timer-days" class="font-heading text-2xl sm:text-4xl md:text-5xl font-bold text-white block">00</span>
+                            <span class="text-[10px] sm:text-xs font-medium text-slate-400 uppercase tracking-wider">Days</span>
+                        </div>
+                        <div class="glass-panel p-3 sm:p-5 rounded-2xl border border-slate-800 text-center group hover:border-cyan-500/40 transition-colors">
+                            <span id="timer-hours" class="font-heading text-2xl sm:text-4xl md:text-5xl font-bold text-white block">00</span>
+                            <span class="text-[10px] sm:text-xs font-medium text-slate-400 uppercase tracking-wider">Hours</span>
+                        </div>
+                        <div class="glass-panel p-3 sm:p-5 rounded-2xl border border-slate-800 text-center group hover:border-cyan-500/40 transition-colors">
+                            <span id="timer-minutes" class="font-heading text-2xl sm:text-4xl md:text-5xl font-bold text-white block">00</span>
+                            <span class="text-[10px] sm:text-xs font-medium text-slate-400 uppercase tracking-wider">Minutes</span>
+                        </div>
+                        <div class="glass-panel p-3 sm:p-5 rounded-2xl border border-slate-800 text-center group hover:border-cyan-500/40 transition-colors">
+                            <span id="timer-seconds" class="font-heading text-2xl sm:text-4xl md:text-5xl font-bold text-cyan-400 block">00</span>
+                            <span class="text-[10px] sm:text-xs font-medium text-slate-400 uppercase tracking-wider">Seconds</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email Waitlist Signup -->
+                <div id="waitlist" class="max-w-xl mx-auto">
+                    <form id="waitlistForm" onsubmit="handleWaitlistSubmit(event)" class="relative flex flex-col sm:flex-row gap-3 p-2 rounded-2xl glass-panel border border-slate-700/80 focus-within:border-cyan-500/60 transition-all shadow-2xl">
+                        <div class="relative flex-grow flex items-center">
+                            <i class="fa-regular fa-envelope text-slate-400 pl-4 text-lg"></i>
+                            <input 
+                                type="email" 
+                                id="emailInput" 
+                                required 
+                                placeholder="Enter your email address..."
+                                class="w-full bg-transparent px-4 py-3 text-white placeholder-slate-500 focus:outline-none text-sm font-medium"
+                            />
+                        </div>
+                        <button 
+                            type="submit" 
+                            id="submitBtn"
+                            class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-teal-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-semibold text-sm transition-all duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center space-x-2 whitespace-nowrap active:scale-95"
+                        >
+                            <span>Reserve Priority Access</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </form>
+
+                    <!-- Success Message Box -->
+                    <div id="successToast" class="hidden mt-4 p-4 rounded-xl bg-cyan-950/80 border border-cyan-500/50 text-cyan-200 text-sm flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-solid fa-circle-check text-cyan-400 text-lg"></i>
+                            <span>You're on the list! Check your inbox soon for VIP instructions.</span>
+                        </div>
+                        <button onclick="dismissToast()" class="text-cyan-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+
+                    <!-- Live Subscriber Count -->
+                    <p class="mt-4 text-xs text-slate-400 flex items-center justify-center space-x-2">
+                        <span class="inline-flex items-center text-teal-400 font-semibold">
+                            <i class="fa-solid fa-user-check text-xs mr-1.5"></i>
+                            <span id="subscriberCounter">2,840</span>
+                        </span>
+                        <span>early adopters already reserved their VIP spot</span>
+                    </p>
+                </div>
+
+            </section>
+
+            <!-- INTERACTIVE DASHBOARD TEASER WIDGET -->
+            <section class="pt-6">
+                <div class="text-center mb-10">
+                    <h2 class="font-heading text-2xl sm:text-4xl font-bold text-white">
+                        Try The <span class="text-cyan-400">Aura OS</span> Experience
+                    </h2>
+                    <p class="text-slate-400 text-sm sm:text-base mt-2">
+                        Interact with our live control panel simulation below.
+                    </p>
+                </div>
+
+                <!-- Dashboard Shell Container -->
+                <div class="glass-panel rounded-3xl border border-slate-800 p-4 sm:p-8 shadow-2xl relative overflow-hidden">
+                    
+                    <!-- Futuristic Top Bar -->
+                    <div class="flex items-center justify-between pb-6 border-b border-slate-800 mb-6">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                            <span class="text-xs text-slate-500 font-mono pl-3 border-l border-slate-800">AURA_OS_V2.4 // SIMULATOR</span>
+                        </div>
+                        <div class="flex items-center space-x-4 text-xs text-slate-400">
+                            <span class="flex items-center space-x-1.5">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                <span>Hub Online</span>
+                            </span>
+                            <span class="hidden sm:inline text-slate-600">|</span>
+                            <span class="hidden sm:inline font-mono" id="liveTime">12:45:00 PM</span>
+                        </div>
+                    </div>
+
+                    <!-- Dashboard Grid: Controls vs Room Visualizer -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                        
+                        <!-- Left Side: Interactive Controls (5 cols) -->
+                        <div class="lg:col-span-5 space-y-6 flex flex-col justify-between">
+                            
+                            <!-- 1. Smart Lighting Card -->
+                            <div class="glass-card p-5 rounded-2xl space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-3">
+                                        <div id="lightIconBg" class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center transition-colors">
+                                            <i class="fa-solid fa-lightbulb text-lg"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-white text-sm">Ambient Lighting</h3>
+                                            <p id="lightStatusText" class="text-xs text-slate-400">Mode: Cyber Cyan (85%)</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Main Power Toggle Switch -->
+                                    <button 
+                                        onclick="toggleLightPower()" 
+                                        id="lightPowerBtn"
+                                        class="w-12 h-6 rounded-full bg-cyan-500 p-1 transition-colors duration-300 relative focus:outline-none"
+                                    >
+                                        <div id="lightPowerDot" class="w-4 h-4 rounded-full bg-white transition-transform duration-300 translate-x-6"></div>
+                                    </button>
+                                </div>
+
+                                <!-- Color Preset Palette -->
+                                <div class="flex items-center justify-between pt-2">
+                                    <span class="text-xs text-slate-400">Preset Theme:</span>
+                                    <div class="flex items-center space-x-2">
+                                        <button onclick="setLightColor('#06b6d4', 'Cyber Cyan')" class="w-6 h-6 rounded-full bg-cyan-400 ring-2 ring-white/20 hover:scale-110 transition-transform"></button>
+                                        <button onclick="setLightColor('#f59e0b', 'Warm Amber')" class="w-6 h-6 rounded-full bg-amber-500 hover:scale-110 transition-transform"></button>
+                                        <button onclick="setLightColor('#a855f7', 'Sunset Violet')" class="w-6 h-6 rounded-full bg-purple-500 hover:scale-110 transition-transform"></button>
+                                        <button onclick="setLightColor('#10b981', 'Aurora Emerald')" class="w-6 h-6 rounded-full bg-emerald-500 hover:scale-110 transition-transform"></button>
+                                    </div>
+                                </div>
+
+                                <!-- Brightness Slider -->
+                                <div class="space-y-1">
+                                    <div class="flex justify-between text-[11px] text-slate-400">
+                                        <span>Intensity</span>
+                                        <span id="brightnessVal">85%</span>
+                                    </div>
+                                    <input type="range" id="brightnessInput" min="10" max="100" value="85" oninput="updateBrightness(this.value)">
+                                </div>
+                            </div>
+
+                            <!-- 2. Thermostat Card -->
+                            <div class="glass-card p-5 rounded-2xl space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-3">
+                                        <div id="tempIconBg" class="w-10 h-10 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center">
+                                            <i class="fa-solid fa-temperature-half text-lg"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-white text-sm">Climate HVAC</h3>
+                                            <p id="hvacStatus" class="text-xs text-teal-400 font-medium">Status: Optimal Eco</p>
+                                        </div>
+                                    </div>
+                                    <span id="tempDisplay" class="font-heading text-2xl font-bold text-white">21°C</span>
+                                </div>
+
+                                <!-- Temperature Slider -->
+                                <div class="space-y-1">
+                                    <div class="flex justify-between text-[11px] text-slate-400">
+                                        <span>Cool (16°C)</span>
+                                        <span>Heat (30°C)</span>
+                                    </div>
+                                    <input type="range" id="tempInput" min="16" max="30" value="21" oninput="updateTemp(this.value)">
+                                </div>
+                            </div>
+
+                            <!-- 3. Smart Door Lock -->
+                            <div class="glass-card p-5 rounded-2xl flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div id="lockIconBg" class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center transition-colors">
+                                        <i id="lockIcon" class="fa-solid fa-lock text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-white text-sm">Biometric Main Entry</h3>
+                                        <p id="lockStatus" class="text-xs text-emerald-400">LOCKED — AES-256 Encrypted</p>
+                                    </div>
+                                </div>
+                                <button 
+                                    onclick="toggleLockState()"
+                                    id="lockToggleBtn"
+                                    class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 border border-slate-700 transition-all active:scale-95"
+                                >
+                                    Toggle State
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <!-- Right Side: Dynamic Living Room Visualizer & Stats (7 cols) -->
+                        <div class="lg:col-span-7 flex flex-col justify-between space-y-6">
+                            
+                            <!-- Main Visualizer Canvas Panel -->
+                            <div id="roomPreviewContainer" class="relative rounded-2xl overflow-hidden border border-slate-800 min-h-[260px] sm:min-h-[320px] flex flex-col justify-between p-6 transition-all duration-500" style="background: radial-gradient(circle at center, rgba(6, 182, 212, 0.25) 0%, rgba(7, 9, 14, 0.9) 80%);">
+                                
+                                <!-- Background Ambient Light Layer -->
+                                <div id="roomAmbientOverlay" class="absolute inset-0 transition-all duration-500 opacity-80" style="background: radial-gradient(circle at 50% 30%, rgba(6, 182, 212, 0.35) 0%, transparent 70%);"></div>
+
+                                <!-- Room Header Overlay Info -->
+                                <div class="relative z-10 flex items-center justify-between">
+                                    <div class="flex items-center space-x-2 bg-slate-900/80 px-3 py-1.5 rounded-full border border-slate-700/60 backdrop-blur-md">
+                                        <i class="fa-solid fa-couch text-xs text-cyan-400"></i>
+                                        <span class="text-xs font-medium text-slate-200">Zone 1: Master Living Suite</span>
+                                    </div>
+                                    
+                                    <!-- Lock Indicator Badge on room -->
+                                    <div id="roomLockBadge" class="bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 px-3 py-1 rounded-full text-xs flex items-center space-x-1.5 backdrop-blur-md">
+                                        <i class="fa-solid fa-shield-halved text-[10px]"></i>
+                                        <span>Secured</span>
+                                    </div>
+                                </div>
+
+                                <!-- Center Room Spatial Isometric Illustration (SVG) -->
+                                <div class="relative z-10 my-4 flex items-center justify-center">
+                                    <svg class="w-full max-w-md h-36 sm:h-44 text-slate-300 opacity-90 transition-all" viewBox="0 0 500 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <!-- Floor outline -->
+                                        <polygon points="250,20 450,110 250,200 50,110" fill="rgba(15, 23, 42, 0.4)" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+                                        <!-- Room Walls -->
+                                        <path d="M50 110 L250 200 L250 240 L50 150 Z" fill="rgba(30, 41, 59, 0.5)" stroke="rgba(255,255,255,0.1)"/>
+                                        <path d="M450 110 L250 200 L250 240 L450 150 Z" fill="rgba(15, 23, 42, 0.7)" stroke="rgba(255,255,255,0.1)"/>
+                                        <!-- Floating Smart Hub Node in Center -->
+                                        <g class="animate-float">
+                                            <circle cx="250" cy="110" r="18" id="hubGlowCircle" fill="#06b6d4" fill-opacity="0.25" stroke="#06b6d4" stroke-width="2"/>
+                                            <circle cx="250" cy="110" r="6" fill="#ffffff"/>
+                                            <!-- Wireless Waves -->
+                                            <circle cx="250" cy="110" r="32" stroke="#06b6d4" stroke-width="1" stroke-dasharray="3 3" opacity="0.6"/>
+                                        </g>
+                                    </svg>
+                                </div>
+
+                                <!-- Room Footer Live Logs -->
+                                <div class="relative z-10 flex items-center justify-between text-xs text-slate-400 bg-slate-900/80 px-4 py-2.5 rounded-xl border border-slate-800 backdrop-blur-md">
+                                    <span class="truncate" id="roomLogText"><i class="fa-solid fa-bolt text-amber-400 mr-2"></i>AI Circadian lighting syncing with local sunset.</span>
+                                    <span class="text-[10px] text-slate-500 font-mono hidden sm:inline">LATENCY: 1.2ms</span>
+                                </div>
+                            </div>
+
+                            <!-- Live Energy Efficiency Meter -->
+                            <div class="glass-card p-5 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+                                        <i class="fa-solid fa-chart-line text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center space-x-2">
+                                            <h4 class="text-sm font-semibold text-white">Live Grid Efficiency</h4>
+                                            <span class="px-2 py-0.5 rounded text-[10px] bg-emerald-500/20 text-emerald-400 font-bold">+38% vs Traditional</span>
+                                        </div>
+                                        <p class="text-xs text-slate-400 mt-0.5">Real-time solar load balancing active</p>
+                                    </div>
+                                </div>
+
+                                <!-- Dynamic Graph Graphic -->
+                                <div class="flex items-center space-x-3 w-full sm:w-auto justify-end">
+                                    <div class="text-right">
+                                        <span id="powerUsageVal" class="font-heading text-lg font-bold text-cyan-400">0.84 kW</span>
+                                        <span class="text-[10px] text-slate-500 block">Current Draw</span>
+                                    </div>
+                                    <!-- Animated Mini Graph Bars -->
+                                    <div class="flex items-end space-x-1 h-8 w-16">
+                                        <div class="w-2 bg-cyan-500/40 rounded-t h-3 animate-pulse"></div>
+                                        <div class="w-2 bg-cyan-500/60 rounded-t h-5 animate-pulse"></div>
+                                        <div class="w-2 bg-cyan-400 rounded-t h-8"></div>
+                                        <div class="w-2 bg-cyan-500/70 rounded-t h-4 animate-pulse"></div>
+                                        <div class="w-2 bg-cyan-500/50 rounded-t h-6"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- CORE FEATURES SHOWCASE -->
+            <section class="space-y-12">
+                <div class="text-center max-w-2xl mx-auto">
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white">
+                        Engineered For Pure <span class="text-cyan-400">Autonomy</span>
+                    </h2>
+                    <p class="text-slate-400 text-sm sm:text-base mt-3">
+                        EdgeSmartSpace replaces fragmented app silos with unified intelligence that learns and adapts to your daily routine.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Feature Card 1 -->
+                    <div class="glass-card p-6 rounded-3xl space-y-4 group transition-all duration-300">
+                        <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-brain text-xl"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-white">AI Thermal Optimization</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Predicts weather shifts and room occupancy to pre-cool or pre-heat spaces, slashing monthly energy costs by up to 40%.
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 2 -->
+                    <div class="glass-card p-6 rounded-3xl space-y-4 group transition-all duration-300">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-sliders text-xl"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-white">Multi-Room Audio Sync</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Zero microsecond audio delay between zones. Stream high-fidelity spatial audio seamlessly across your entire property.
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 3 -->
+                    <div class="glass-card p-6 rounded-3xl space-y-4 group transition-all duration-300">
+                        <div class="w-12 h-12 rounded-2xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-fingerprint text-xl"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-white">Biometric Local Security</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Facial and gait recognition processed 100% locally on dedicated hardware neural engines. Zero video feed cloud exposure.
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 4 -->
+                    <div class="glass-card p-6 rounded-3xl space-y-4 group transition-all duration-300">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-sun text-xl"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-white">Circadian Ambient Lighting</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Dynamically mirrors natural solar color temperatures to boost morning productivity and optimize evening melatonin production.
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 5 -->
+                    <div class="glass-card p-6 rounded-3xl space-y-4 group transition-all duration-300">
+                        <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-network-wired text-xl"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-white">Matter & Thread Protocol</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Universal mesh network support guarantees compatibility with Apple HomeKit, Google Home, Alexa, and Home Assistant.
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 6 -->
+                    <div class="glass-card p-6 rounded-3xl space-y-4 group transition-all duration-300">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-shield-cat text-xl"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-white">Offline Fail-Safe Engine</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Internet outage? No problem. Local core automation routines remain 100% operational even without active WAN connectivity.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- FAQ & EARLY VIP PERKS SECTION -->
+            <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                
+                <!-- VIP Early Perks Highlight Box (5 cols) -->
+                <div class="lg:col-span-5 glass-panel p-8 rounded-3xl border border-cyan-500/30 relative overflow-hidden space-y-6">
+                    <div class="absolute -right-12 -top-12 w-40 h-40 bg-cyan-500/20 rounded-full blur-2xl pointer-events-none"></div>
+                    
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-semibold">
+                        <i class="fa-solid fa-crown text-amber-400"></i>
+                        <span>LIMITED FOUNDER TIER</span>
+                    </div>
+
+                    <h3 class="font-heading text-2xl sm:text-3xl font-bold text-white">
+                        Early Waitlist <br/><span class="text-cyan-400">Exclusive Perks</span>
+                    </h3>
+
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        By reserving your position on our waitlist today, you unlock permanent early adopter privileges at product launch:
+                    </p>
+
+                    <ul class="space-y-4 text-sm text-slate-200">
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-cyan-400 mt-1"></i>
+                            <span><strong class="text-white">50% Off First Hardware Starter Pack</strong> at launch.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-cyan-400 mt-1"></i>
+                            <span><strong class="text-white">Lifetime Free Cloud & Analytics</strong> access with no subscription fees ever.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-cyan-400 mt-1"></i>
+                            <span><strong class="text-white">Serialized Laser-Engraved "Founder Hub"</strong> edition hardware.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-cyan-400 mt-1"></i>
+                            <span><strong class="text-white">Priority Beta Hardware Testing</strong> shipped directly to your door in Q3 2026.</span>
+                        </li>
+                    </ul>
+
+                    <div class="pt-2">
+                        <a href="#waitlist" class="block w-full text-center py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-semibold text-sm transition-all shadow-lg shadow-cyan-500/20">
+                            Claim Founder Perks Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- FAQ Accordions (7 cols) -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div>
+                        <h3 class="font-heading text-2xl sm:text-3xl font-bold text-white mb-2">
+                            Frequently Asked Questions
+                        </h3>
+                        <p class="text-slate-400 text-sm">Got questions before joining the waitlist? We have answers.</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        
+                        <!-- FAQ 1 -->
+                        <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+                            <button onclick="toggleFaq(1)" class="w-full p-5 text-left flex items-center justify-between focus:outline-none">
+                                <span class="font-semibold text-white text-sm sm:text-base">When will EdgeSmartSpace officially release?</span>
+                                <i id="faq-icon-1" class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform"></i>
+                            </button>
+                            <div id="faq-ans-1" class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
+                                Beta hardware will begin shipping to select VIP waitlist members in Q3 2026, followed by our global general release shortly thereafter.
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+                            <button onclick="toggleFaq(2)" class="w-full p-5 text-left flex items-center justify-between focus:outline-none">
+                                <span class="font-semibold text-white text-sm sm:text-base">Will it work with Apple Home, Google, and Alexa?</span>
+                                <i id="faq-icon-2" class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform"></i>
+                            </button>
+                            <div id="faq-ans-2" class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
+                                Yes. EdgeSmartSpace is natively built on Matter and Thread protocol standards, offering instant bi-directional synchronization with Apple HomeKit, Google Home, Amazon Alexa, and Home Assistant.
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+                            <button onclick="toggleFaq(3)" class="w-full p-5 text-left flex items-center justify-between focus:outline-none">
+                                <span class="font-semibold text-white text-sm sm:text-base">How is my data privacy and security protected?</span>
+                                <i id="faq-icon-3" class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform"></i>
+                            </button>
+                            <div id="faq-ans-3" class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
+                                EdgeSmartSpace operates on a Local-First architecture. AI processing occurs on local edge chips inside your hub. Your camera feeds, biometric logs, and sensor telemetry never touch external servers without explicit user permission.
+                            </div>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+                            <button onclick="toggleFaq(4)" class="w-full p-5 text-left flex items-center justify-between focus:outline-none">
+                                <span class="font-semibold text-white text-sm sm:text-base">Is installation difficult for existing homes?</span>
+                                <i id="faq-icon-4" class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform"></i>
+                            </button>
+                            <div id="faq-ans-4" class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
+                                No electrician required. EdgeSmartSpace wireless sensors, light relays, and biometric locks are designed for DIY plug-and-play installation in under 15 minutes. Professional installer support is also available if needed.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="mt-20 border-t border-slate-800/80 glass-panel">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+                
+                <!-- Logo & Tagline -->
+                <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4 text-center sm:text-left">
+                    <a href="#" class="flex items-center space-x-2">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-white text-sm">
+                            <i class="fa-solid fa-house-signal"></i>
+                        </div>
+                        <span class="font-heading text-xl font-bold text-white">Aura<span class="text-cyan-400">Home</span></span>
+                    </a>
+                    <span class="text-slate-600 hidden sm:inline">|</span>
+                    <p class="text-xs text-slate-500">Autonomous Spatial Intelligence Platform.</p>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex items-center space-x-6 text-slate-400 text-lg">
+                    <a href="#" class="hover:text-cyan-400 transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="hover:text-cyan-400 transition-colors"><i class="fa-brands fa-discord"></i></a>
+                    <a href="#" class="hover:text-cyan-400 transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="hover:text-cyan-400 transition-colors"><i class="fa-brands fa-github"></i></a>
+                </div>
+
+                <!-- Copyright -->
+                <div class="text-xs text-slate-500 text-center md:text-right">
+                    <p>&copy; 2026 EdgeSmartSpace Inc. All rights reserved.</p>
+                    <p class="mt-1 text-[10px] text-slate-600">Built for Privacy & Pure Autonomy.</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        /* -------------------------------------------------------------
+           1. CANVAS BACKGROUND PARTICLE SYSTEM
+        ------------------------------------------------------------- */
+        const canvas = document.getElementById('bgCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 1.8 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.4;
+                this.speedY = (Math.random() - 0.5) * 0.4;
+                this.alpha = Math.random() * 0.5 + 0.2;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x < 0) this.x = canvas.width;
+                if (this.x > canvas.width) this.x = 0;
+                if (this.y < 0) this.y = canvas.height;
+                if (this.y > canvas.height) this.y = 0;
+            }
+            draw() {
+                ctx.fillStyle = `rgba(6, 182, 212, ${this.alpha})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 50; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        /* -------------------------------------------------------------
+           2. COUNTDOWN TIMER LOGIC
+        ------------------------------------------------------------- */
+        // Target launch: 84 Days from now
+        const launchDate = new Date().getTime() + (84 * 24 * 60 * 60 * 1000);
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            if (distance < 0) {
+                document.getElementById('timer-days').innerText = "00";
+                document.getElementById('timer-hours').innerText = "00";
+                document.getElementById('timer-minutes').innerText = "00";
+                document.getElementById('timer-seconds').innerText = "00";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('timer-days').innerText = days < 10 ? '0' + days : days;
+            document.getElementById('timer-hours').innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById('timer-minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('timer-seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        /* -------------------------------------------------------------
+           3. WAITLIST FORM & LOCAL STORAGE PERSISTENCE
+        ------------------------------------------------------------- */
+        let subscriberCount = parseInt(localStorage.getItem('EdgeSmartSpace_sub_count')) || 2840;
+        document.getElementById('subscriberCounter').innerText = subscriberCount.toLocaleString();
+
+        if (localStorage.getItem('EdgeSmartSpace_subscribed')) {
+            showSubscribedState();
+        }
+
+        function handleWaitlistSubmit(event) {
+            event.preventDefault();
+            const emailInput = document.getElementById('emailInput');
+            const email = emailInput.value.trim();
+
+            if (!email || !email.includes('@')) return;
+
+            if (!localStorage.getItem('EdgeSmartSpace_subscribed')) {
+                subscriberCount += 1;
+                localStorage.setItem('EdgeSmartSpace_sub_count', subscriberCount);
+                localStorage.setItem('EdgeSmartSpace_subscribed', 'true');
+                document.getElementById('subscriberCounter').innerText = subscriberCount.toLocaleString();
+            }
+
+            showSubscribedState();
+            document.getElementById('successToast').classList.remove('hidden');
+        }
+
+        function showSubscribedState() {
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.innerHTML = `<span>Priority Reserved</span> <i class="fa-solid fa-check text-xs"></i>`;
+            submitBtn.classList.remove('from-cyan-500', 'to-indigo-600');
+            submitBtn.classList.add('from-emerald-500', 'to-teal-600');
+        }
+
+        function dismissToast() {
+            document.getElementById('successToast').classList.add('hidden');
+        }
+
+        /* -------------------------------------------------------------
+           4. INTERACTIVE DASHBOARD SIMULATOR LOGIC
+        ------------------------------------------------------------- */
+        let dashboardState = {
+            lightOn: true,
+            lightColor: '#06b6d4',
+            lightColorName: 'Cyber Cyan',
+            brightness: 85,
+            temp: 21,
+            locked: true
+        };
+
+        // Realtime Clock Update
+        function updateLiveClock() {
+            const now = new Date();
+            document.getElementById('liveTime').innerText = now.toLocaleTimeString();
+        }
+        setInterval(updateLiveClock, 1000);
+        updateLiveClock();
+
+        // Light Power Switch
+        function toggleLightPower() {
+            dashboardState.lightOn = !dashboardState.lightOn;
+            applyLightState();
+        }
+
+        // Set Light Color Preset
+        function setLightColor(colorHex, colorName) {
+            dashboardState.lightColor = colorHex;
+            dashboardState.lightColorName = colorName;
+            if (!dashboardState.lightOn) {
+                dashboardState.lightOn = true;
+            }
+            applyLightState();
+        }
+
+        // Brightness Change
+        function updateBrightness(val) {
+            dashboardState.brightness = val;
+            document.getElementById('brightnessVal').innerText = val + '%';
+            applyLightState();
+        }
+
+        function applyLightState() {
+            const powerBtn = document.getElementById('lightPowerBtn');
+            const powerDot = document.getElementById('lightPowerDot');
+            const statusText = document.getElementById('lightStatusText');
+            const overlay = document.getElementById('roomAmbientOverlay');
+            const hubCircle = document.getElementById('hubGlowCircle');
+
+            if (dashboardState.lightOn) {
+                powerBtn.classList.remove('bg-slate-700');
+                powerBtn.classList.add('bg-cyan-500');
+                powerDot.classList.add('translate-x-6');
+                statusText.innerText = `Mode: ${dashboardState.lightColorName} (${dashboardState.brightness}%)`;
+                
+                // Adjust overlay background color with opacity scale
+                const alpha = (dashboardState.brightness / 100) * 0.4;
+                overlay.style.background = `radial-gradient(circle at 50% 30%, ${dashboardState.lightColor}${Math.floor(alpha * 255).toString(16).padStart(2,'0')} 0%, transparent 70%)`;
+                hubCircle.setAttribute('fill', dashboardState.lightColor);
+                hubCircle.setAttribute('stroke', dashboardState.lightColor);
+            } else {
+                powerBtn.classList.remove('bg-cyan-500');
+                powerBtn.classList.add('bg-slate-700');
+                powerDot.classList.remove('translate-x-6');
+                statusText.innerText = `Lights OFF`;
+                overlay.style.background = 'none';
+                hubCircle.setAttribute('fill', '#475569');
+                hubCircle.setAttribute('stroke', '#475569');
+            }
+            addRoomLog(`Lighting updated: ${dashboardState.lightOn ? dashboardState.lightColorName : 'OFF'}`);
+        }
+
+        // Thermostat Update
+        function updateTemp(val) {
+            dashboardState.temp = val;
+            document.getElementById('tempDisplay').innerText = val + '°C';
+            
+            const statusLabel = document.getElementById('hvacStatus');
+            const tempIconBg = document.getElementById('tempIconBg');
+
+            if (val < 19) {
+                statusLabel.innerText = "Status: Cooling Active ❄️";
+                statusLabel.className = "text-xs text-cyan-400 font-medium";
+                tempIconBg.className = "w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center";
+            } else if (val >= 19 && val <= 23) {
+                statusLabel.innerText = "Status: Optimal Eco 🌿";
+                statusLabel.className = "text-xs text-teal-400 font-medium";
+                tempIconBg.className = "w-10 h-10 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center";
+            } else {
+                statusLabel.innerText = "Status: Heating Active 🔥";
+                statusLabel.className = "text-xs text-amber-400 font-medium";
+                tempIconBg.className = "w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center";
+            }
+
+            addRoomLog(`HVAC setpoint adjusted to ${val}°C`);
+        }
+
+        // Smart Lock Toggle
+        function toggleLockState() {
+            dashboardState.locked = !dashboardState.locked;
+            const lockIcon = document.getElementById('lockIcon');
+            const lockIconBg = document.getElementById('lockIconBg');
+            const lockStatus = document.getElementById('lockStatus');
+            const roomBadge = document.getElementById('roomLockBadge');
+
+            if (dashboardState.locked) {
+                lockIcon.className = "fa-solid fa-lock text-lg";
+                lockIconBg.className = "w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center transition-colors";
+                lockStatus.innerText = "LOCKED — AES-256 Encrypted";
+                lockStatus.className = "text-xs text-emerald-400";
+
+                roomBadge.className = "bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 px-3 py-1 rounded-full text-xs flex items-center space-x-1.5 backdrop-blur-md";
+                roomBadge.innerHTML = `<i class="fa-solid fa-shield-halved text-[10px]"></i><span>Secured</span>`;
+                addRoomLog("Main Entry locked via biometric routine.");
+            } else {
+                lockIcon.className = "fa-solid fa-lock-open text-lg";
+                lockIconBg.className = "w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center transition-colors";
+                lockStatus.innerText = "UNLOCKED — Proximity Access";
+                lockStatus.className = "text-xs text-amber-400";
+
+                roomBadge.className = "bg-amber-950/80 border border-amber-500/40 text-amber-300 px-3 py-1 rounded-full text-xs flex items-center space-x-1.5 backdrop-blur-md";
+                roomBadge.innerHTML = `<i class="fa-solid fa-triangle-exclamation text-[10px]"></i><span>Unlocked</span>`;
+                addRoomLog("Main Entry unlocked via mobile simulator key.");
+            }
+        }
+
+        function addRoomLog(msg) {
+            document.getElementById('roomLogText').innerHTML = `<i class="fa-solid fa-bolt text-amber-400 mr-2"></i>${msg}`;
+        }
+
+        // Fluctuate energy usage slightly for visual realness
+        setInterval(() => {
+            const usageVal = (0.78 + Math.random() * 0.15).toFixed(2);
+            document.getElementById('powerUsageVal').innerText = usageVal + " kW";
+        }, 3000);
+
+        /* -------------------------------------------------------------
+           5. FAQ ACCORDION TOGGLE
+        ------------------------------------------------------------- */
+        function toggleFaq(id) {
+            const ans = document.getElementById(`faq-ans-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+
+            if (ans.classList.contains('hidden')) {
+                ans.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                ans.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+    </script>
+</body>
+</html>
