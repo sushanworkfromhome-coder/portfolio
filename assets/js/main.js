@@ -51,10 +51,11 @@
   });
 
   /* ---------- Scroll scenes (GSAP) ---------- */
-  if (hasGSAP && !reduce) {
+  if (hasGSAP && !reduce) try {
     gsap.registerPlugin(ScrollTrigger);
     // Mobile address bar showing/hiding shouldn't recalculate pins (prevents jumps)
     ScrollTrigger.config({ ignoreMobileResize: true });
+    var mm = gsap.matchMedia();
 
 
     // Hero copy parallax
@@ -139,6 +140,14 @@
     });
 
     window.addEventListener('load', function () { ScrollTrigger.refresh(); });
+  } catch (err) {
+    // Safety net: if any scroll animation fails, show all content normally and keep the rest of the site working
+    console.error('Scroll animations disabled:', err);
+    try {
+      ScrollTrigger.getAll().forEach(function (t) { t.kill(true); });
+      gsap.set('.hero-content, .curtain-copy, .curtain-copy > *, #flipCard, #lens, #securityReveal, .cam, .auto-card, .sol-card, .process li, .alacarte li, .plan, #lighting .scene-copy > *', { clearProps: 'all' });
+    } catch (e) {}
+    document.documentElement.classList.add('no-motion');
   }
 
   /* ---------- Arriving-home + gate sequence ----------

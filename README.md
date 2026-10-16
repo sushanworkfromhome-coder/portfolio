@@ -21,8 +21,20 @@ Until a key is set, submitting the form opens the visitor's email app with the e
 to the address in `CONTACT_EMAIL` at the top of `assets/js/main.js`, so no lead is lost.
 
 ## Things to edit in index.html (search for them)
-- `[Insert Logo Here]` (header + footer) → your `<img>`
 - `+91 98765 43210` and `919876543210` (WhatsApp link) → your numbers
 - `https://www.edgesmartspace.com` → your domain (canonical, OG tags, schema, sitemap, robots)
 - Prices: each price has `data-inr` / `data-usd` attributes plus the visible text — update all three.
   The JSON-LD `<script type="application/ld+json">` in the `<head>` also lists INR prices and the address.
+
+## Logo files (assets/img/logo/)
+| File | Used for |
+|---|---|
+| `logo-horizontal.svg` | Header (icon + wordmark side by side) |
+| `logo-stacked.svg` | Footer (original stacked layout) |
+| `logo-icon.svg` | Browser tab icon |
+| `logo-horizontal-light-bg.svg`, `logo-stacked-light-bg.svg` | Letterheads, invoices, light backgrounds |
+| `logo-stacked@2x.png`, `logo-icon@2x.png` | Social media, WhatsApp profile, Google Business |
+
+App/tab icons live in `assets/img/` (`favicon-32.png`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`), and the share image is `assets/img/og-cover.jpg`.
+To swap the logo later, replace these files keeping the same names — no code changes needed.
+Colours: icon gradient #00F2FE → #4FACFE, wordmark #F5F7FA (dark-bg versions); #0096C7 → #2563EB and #0A0A0A (light-bg versions).
