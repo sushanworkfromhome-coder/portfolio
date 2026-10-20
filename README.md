@@ -1,40 +1,47 @@
-# Edge Smart Space — Static Website (HTML / CSS / JS)
+# Edge Smart Space — Website v2 (HTML / CSS / JS)
 
-No server code. Open `index.html` directly, or host the folder anywhere static:
-Netlify, Vercel, GitHub Pages, Cloudflare Pages, Hostinger/GoDaddy file manager, etc.
+Static site: no server code, no frameworks, no animation libraries. Open `index.html` or upload the folder to any static host
+(Netlify, Vercel, GitHub Pages, Cloudflare Pages, Hostinger…).
 
-## Files
+## What's inside
 ```
-index.html             The whole page (SEO meta, Open Graph, JSON-LD schema inline)
-assets/css/style.css   Styles — colour tokens at the top
-assets/js/hero3d.js    Three.js 3D hero (mouse + scroll reactive)
-assets/js/main.js      Scroll scenes (GSAP), lighting demo, ₹/$ toggle, WhatsApp, contact form
-assets/img/og-cover.jpg Social share image (1200×630)
-sitemap.xml, robots.txt
+index.html                 Whole page: SEO meta, Open Graph, JSON-LD (LocalBusiness + Products), inline logo
+assets/css/style.css       All styles. Light theme tokens in :root, dark theme in [data-theme="dark"]
+assets/js/main.js          Theme switch, touch-panel moods, curtain scroll sequence, gate demo, form (~12 KB)
+assets/img/render/         Photoreal interior renders (WebP, 2 sizes each)
+  hero_day / hero_dusk           Hero background (light mode / dark mode)
+  mood_day|warm|cool|movie|off   Touch-panel lighting moods (same room, same camera)
+  curtain-1280-00..15            Curtain opening sequence, desktop
+  curtain-720-00..15             Curtain opening sequence, phones
+assets/img/logo/           Logo files (SVG + PNG); the header/footer logo is inlined as a theme-aware symbol
 ```
 
-## Make the contact form deliver emails (2 minutes, free)
-1. Go to https://web3forms.com, enter **edgesmartspace@gmail.com**, and copy the access key they email you.
-2. In `index.html`, search for `YOUR_WEB3FORMS_ACCESS_KEY` and paste the key there.
+## Section order
+Hero → 01 Touch Panels → 02 Automatic Curtains → 03 Locks & CCTV → 04 Sensors & Gates → Solutions → Pricing → Contact → Footer
 
-Until a key is set, submitting the form opens the visitor's email app with the enquiry pre-filled
-to the address in `CONTACT_EMAIL` at the top of `assets/js/main.js`, so no lead is lost.
+## Light / dark mode
+- Loads in **light mode** by default. The sun/moon switch in the header changes theme; the choice is remembered per browser.
+- The hero photo also changes: daylight in light mode, dusk in dark mode.
 
-## Things to edit in index.html (search for them)
-- `+91 98765 43210` and `919876543210` (WhatsApp link) → your numbers
-- `https://www.edgesmartspace.com` → your domain (canonical, OG tags, schema, sitemap, robots)
-- Prices: each price has `data-inr` / `data-usd` attributes plus the visible text — update all three.
-  The JSON-LD `<script type="application/ld+json">` in the `<head>` also lists INR prices and the address.
+## Touch-panel moods
+Each scene key shows a separate render of the *same* room under different lighting (Daylight, Warm Evening, Cool Night,
+Movie, All Off). The other scenes download just before the section scrolls into view, so taps switch instantly.
+The dimmer slider adjusts brightness on top.
 
-## Logo files (assets/img/logo/)
-| File | Used for |
-|---|---|
-| `logo-horizontal.svg` | Header (icon + wordmark side by side) |
-| `logo-stacked.svg` | Footer (original stacked layout) |
-| `logo-icon.svg` | Browser tab icon |
-| `logo-horizontal-light-bg.svg`, `logo-stacked-light-bg.svg` | Letterheads, invoices, light backgrounds |
-| `logo-stacked@2x.png`, `logo-icon@2x.png` | Social media, WhatsApp profile, Google Business |
+## Automatic curtains
+A 16-frame render sequence is drawn on a canvas and blended frame-to-frame as you scroll, so the motion is continuous.
+Phones get lighter 720px frames. With reduced-motion or no JavaScript, a still of the open curtains is shown with the text.
 
-App/tab icons live in `assets/img/` (`favicon-32.png`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`), and the share image is `assets/img/og-cover.jpg`.
-To swap the logo later, replace these files keeping the same names — no code changes needed.
-Colours: icon gradient #00F2FE → #4FACFE, wordmark #F5F7FA (dark-bg versions); #0096C7 → #2563EB and #0A0A0A (light-bg versions).
+## Contact form
+Uses Web3Forms (free). Get a key at https://web3forms.com with edgesmartspace@gmail.com, then replace
+`YOUR_WEB3FORMS_ACCESS_KEY` in `index.html`. Until then the form opens the visitor's email app pre-filled.
+
+## Things to edit before launch
+- Phone `+91 98765 43210` and WhatsApp number (`WHATSAPP` at the top of `assets/js/main.js`)
+- Domain `https://www.edgesmartspace.com` (canonical, Open Graph, JSON-LD, sitemap.xml, robots.txt)
+- Street address in the JSON-LD block
+- Prices: visible text plus `data-inr` / `data-usd` on each price
+
+## Replacing the renders with your own photos
+Keep the same file names and sizes (1600 / 960 px wide, 16:9). For the mood switch to look right, all five mood
+images must be the same room from the same camera position.

@@ -1,521 +1,60 @@
 <!doctype html>
-<html lang="en-IN" class="no-js">
+<html lang="en-IN" data-theme="light" class="no-js">
 <head>
-<script>document.documentElement.classList.replace("no-js","js");</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>
+  /* Light mode by default; remember the visitor's choice. Runs before paint (no flash). */
+  (function (d) {
+    var t = 'light';
+    try { if (localStorage.getItem('ess-theme') === 'dark') t = 'dark'; } catch (e) {}
+    d.setAttribute('data-theme', t);
+    d.className = d.className.replace('no-js', 'js');
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) d.className += ' no-motion';
+  })(document.documentElement);
+</script>
 <title>Edge Smart Space | Premium Smart Home Automation in Delhi NCR</title>
-<meta name="description" content="Redefine your living with Edge Smart Space — smart lighting, motorised curtains, biometric locks, CCTV, motion sensors and gate automation, professionally installed. Packages from ₹59,999.">
-<meta name="keywords" content="smart home automation, home automation company, smart lighting, smart curtains, smart door lock, CCTV installation, smart gate automation, motion sensors, Delhi NCR">
+<meta name="description" content="Edge Smart Space designs and installs premium smart home automation: glass touch panels, motorised curtains, smart lighting, biometric locks, CCTV, sensors and gate automation. Book a free consultation.">
+<meta name="keywords" content="smart home automation, touch panel switches, automatic curtains, motorised curtains, smart lighting, smart door lock, CCTV installation, gate automation, home automation Delhi NCR">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="theme-color" content="#0A0A0A">
-<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#FAFAF8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://www.edgesmartspace.com/">
-
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Edge Smart Space">
-<meta property="og:title" content="Edge Smart Space | Premium Smart Home Automation in Delhi NCR">
-<meta property="og:description" content="Redefine your living with Edge Smart Space — smart lighting, motorised curtains, biometric locks, CCTV, motion sensors and gate automation, professionally installed. Packages from ₹59,999.">
+<meta property="og:title" content="Edge Smart Space | Premium Smart Home Automation">
+<meta property="og:description" content="Touch panels, automatic curtains, lighting, security and gate automation — designed, installed and supported by one team.">
 <meta property="og:url" content="https://www.edgesmartspace.com/">
 <meta property="og:image" content="https://www.edgesmartspace.com/assets/img/og-cover.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_IN">
-<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Edge Smart Space | Premium Smart Home Automation in Delhi NCR">
-<meta name="twitter:description" content="Redefine your living with Edge Smart Space — smart lighting, motorised curtains, biometric locks, CCTV, motion sensors and gate automation, professionally installed. Packages from ₹59,999.">
+<meta name="twitter:title" content="Edge Smart Space | Premium Smart Home Automation">
+<meta name="twitter:description" content="Touch panels, automatic curtains, lighting, security and gate automation.">
 <meta name="twitter:image" content="https://www.edgesmartspace.com/assets/img/og-cover.jpg">
-
 <link rel="icon" type="image/svg+xml" href="assets/img/logo/logo-icon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-
-<!-- Performance: preconnect + font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap">
+<link rel="preload" as="image" href="assets/img/render/hero_day-1600.webp" media="(min-width: 901px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/render/hero_day-960.webp" media="(max-width: 900px)" fetchpriority="high">
 <link rel="stylesheet" href="assets/css/style.css">
-
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["LocalBusiness","HomeAndConstructionBusiness"],"@id":"https://www.edgesmartspace.com/#business","name":"Edge Smart Space","description":"Premium smart home automation design and installation: lighting, curtains, locks, CCTV, sensors and gate automation.","url":"https://www.edgesmartspace.com","email":"edgesmartspace@gmail.com","telephone":"+91 98765 43210","image":"https://www.edgesmartspace.com/assets/img/og-cover.jpg","priceRange":"₹₹₹","address":{"@type":"PostalAddress","streetAddress":"Your Street Address","addressLocality":"New Delhi","addressRegion":"Delhi","postalCode":"110001","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":28.6139,"longitude":77.209},"openingHours":"Mo-Sa 10:00-19:00","areaServed":["Delhi","Gurugram","Noida","Faridabad","Ghaziabad"],"sameAs":["https://instagram.com/edgesmartspace","https://facebook.com/edgesmartspace","https://linkedin.com/company/edgesmartspace","https://youtube.com/@edgesmartspace","https://x.com/edgesmartspace"],"logo":"https://www.edgesmartspace.com/assets/img/logo/logo-stacked@2x.png"},{"@type":"WebSite","@id":"https://www.edgesmartspace.com/#website","url":"https://www.edgesmartspace.com","name":"Edge Smart Space","publisher":{"@id":"https://www.edgesmartspace.com/#business"}},{"@type":"Product","@id":"https://www.edgesmartspace.com/#product-curtain","name":"Smart Curtain Control","brand":{"@type":"Brand","name":"Edge Smart Space"},"description":"Smart Curtain Control by Edge Smart Space — professionally installed, app and voice controlled.","offers":{"@type":"Offer","priceCurrency":"INR","price":8999,"availability":"https://schema.org/InStock","seller":{"@id":"https://www.edgesmartspace.com/#business"},"priceSpecification":{"@type":"UnitPriceSpecification","price":8999,"priceCurrency":"INR","description":"Starting price per window"}}},{"@type":"Product","@id":"https://www.edgesmartspace.com/#product-lighting","name":"Smart Lighting & Switches","brand":{"@type":"Brand","name":"Edge Smart Space"},"description":"Smart Lighting & Switches by Edge Smart Space — professionally installed, app and voice controlled.","offers":{"@type":"Offer","priceCurrency":"INR","price":9999,"availability":"https://schema.org/InStock","seller":{"@id":"https://www.edgesmartspace.com/#business"},"priceSpecification":{"@type":"UnitPriceSpecification","price":9999,"priceCurrency":"INR","description":"Starting price per room"}}},{"@type":"Product","@id":"https://www.edgesmartspace.com/#product-lock","name":"Smart Door Locks","brand":{"@type":"Brand","name":"Edge Smart Space"},"description":"Smart Door Locks by Edge Smart Space — professionally installed, app and voice controlled.","offers":{"@type":"Offer","priceCurrency":"INR","price":14999,"availability":"https://schema.org/InStock","seller":{"@id":"https://www.edgesmartspace.com/#business"},"priceSpecification":{"@type":"UnitPriceSpecification","price":14999,"priceCurrency":"INR","description":"Starting price per door"}}},{"@type":"Product","@id":"https://www.edgesmartspace.com/#product-cctv","name":"CCTV Security Systems","brand":{"@type":"Brand","name":"Edge Smart Space"},"description":"CCTV Security Systems by Edge Smart Space — professionally installed, app and voice controlled.","offers":{"@type":"Offer","priceCurrency":"INR","price":19999,"availability":"https://schema.org/InStock","seller":{"@id":"https://www.edgesmartspace.com/#business"},"priceSpecification":{"@type":"UnitPriceSpecification","price":19999,"priceCurrency":"INR","description":"Starting price per 4-cam kit"}}},{"@type":"Product","@id":"https://www.edgesmartspace.com/#product-sensor","name":"Motion Sensors","brand":{"@type":"Brand","name":"Edge Smart Space"},"description":"Motion Sensors by Edge Smart Space — professionally installed, app and voice controlled.","offers":{"@type":"Offer","priceCurrency":"INR","price":2499,"availability":"https://schema.org/InStock","seller":{"@id":"https://www.edgesmartspace.com/#business"},"priceSpecification":{"@type":"UnitPriceSpecification","price":2499,"priceCurrency":"INR","description":"Starting price per sensor"}}},{"@type":"Product","@id":"https://www.edgesmartspace.com/#product-gate","name":"Smart Gate Automation","brand":{"@type":"Brand","name":"Edge Smart Space"},"description":"Smart Gate Automation by Edge Smart Space — professionally installed, app and voice controlled.","offers":{"@type":"Offer","priceCurrency":"INR","price":34999,"availability":"https://schema.org/InStock","seller":{"@id":"https://www.edgesmartspace.com/#business"},"priceSpecification":{"@type":"UnitPriceSpecification","price":34999,"priceCurrency":"INR","description":"Starting price per gate"}}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["LocalBusiness","HomeAndConstructionBusiness"],"@id":"https://www.edgesmartspace.com/#business","name":"Edge Smart Space","description":"Premium smart home automation: touch panels, automatic curtains, lighting, locks, CCTV, sensors and gate automation.","url":"https://www.edgesmartspace.com","email":"edgesmartspace@gmail.com","telephone":"+91 98765 43210","image":"https://www.edgesmartspace.com/assets/img/og-cover.jpg","logo":"https://www.edgesmartspace.com/assets/img/logo/logo-stacked@2x.png","priceRange":"₹₹₹","address":{"@type":"PostalAddress","streetAddress":"Your Street Address","addressLocality":"New Delhi","addressRegion":"Delhi","postalCode":"110001","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":28.6139,"longitude":77.209},"openingHours":"Mo-Sa 10:00-19:00","areaServed":["Delhi","Gurugram","Noida","Faridabad","Ghaziabad"],"sameAs":["https://instagram.com/edgesmartspace","https://facebook.com/edgesmartspace","https://linkedin.com/company/edgesmartspace","https://youtube.com/@edgesmartspace"]},{"@type":"WebSite","@id":"https://www.edgesmartspace.com/#website","url":"https://www.edgesmartspace.com","name":"Edge Smart Space","publisher":{"@id":"https://www.edgesmartspace.com/#business"}},{"@type":"Product","@id":"https://www.edgesmartspace.com/#product-touch-panels","name":"Smart Touch Panels & Lighting","brand":{"@type":"Brand","name":"Edge Smart Space"},"description":"Smart Touch Panels & Lighting by Edge Smart Space, professionally installed, app and voice controlled.","offers":{"@type":"Offer","priceCurrency":"INR","price":9999,"availability":"https://schema.org/InStock","seller":{"@id":"https://www.edgesmartspace.com/#business"},"priceSpecification":{"@type":"UnitPriceSpecification","price":9999,"priceCurrency":"INR","description":"Starting price per room"}}},{"@type":"Product","@id":"https://www.edgesmartspace.com/#product-curtains","name":"Automatic Curtains","brand":{"@type":"Brand","name":"Edge Smart Space"},"description":"Automatic Curtains by Edge Smart Space, professionally installed, app and voice controlled.","offers":{"@type":"Offer","priceCurrency":"INR","price":8999,"availability":"https://schema.org/InStock","seller":{"@id":"https://www.edgesmartspace.com/#business"},"priceSpecification":{"@type":"UnitPriceSpecification","price":8999,"priceCurrency":"INR","description":"Starting price per window"}}},{"@type":"Product","@id":"https://www.edgesmartspace.com/#product-locks","name":"Smart Door Locks","brand":{"@type":"Brand","name":"Edge Smart Space"},"description":"Smart Door Locks by Edge Smart Space, professionally installed, app and voice controlled.","offers":{"@type":"Offer","priceCurrency":"INR","price":14999,"availability":"https://schema.org/InStock","seller":{"@id":"https://www.edgesmartspace.com/#business"},"priceSpecification":{"@type":"UnitPriceSpecification","price":14999,"priceCurrency":"INR","description":"Starting price per door"}}},{"@type":"Product","@id":"https://www.edgesmartspace.com/#product-cctv","name":"CCTV Security System","brand":{"@type":"Brand","name":"Edge Smart Space"},"description":"CCTV Security System by Edge Smart Space, professionally installed, app and voice controlled.","offers":{"@type":"Offer","priceCurrency":"INR","price":19999,"availability":"https://schema.org/InStock","seller":{"@id":"https://www.edgesmartspace.com/#business"},"priceSpecification":{"@type":"UnitPriceSpecification","price":19999,"priceCurrency":"INR","description":"Starting price per 4-camera kit"}}},{"@type":"Product","@id":"https://www.edgesmartspace.com/#product-sensors","name":"Motion & Presence Sensors","brand":{"@type":"Brand","name":"Edge Smart Space"},"description":"Motion & Presence Sensors by Edge Smart Space, professionally installed, app and voice controlled.","offers":{"@type":"Offer","priceCurrency":"INR","price":2499,"availability":"https://schema.org/InStock","seller":{"@id":"https://www.edgesmartspace.com/#business"},"priceSpecification":{"@type":"UnitPriceSpecification","price":2499,"priceCurrency":"INR","description":"Starting price per sensor"}}},{"@type":"Product","@id":"https://www.edgesmartspace.com/#product-gates","name":"Smart Gate Automation","brand":{"@type":"Brand","name":"Edge Smart Space"},"description":"Smart Gate Automation by Edge Smart Space, professionally installed, app and voice controlled.","offers":{"@type":"Offer","priceCurrency":"INR","price":34999,"availability":"https://schema.org/InStock","seller":{"@id":"https://www.edgesmartspace.com/#business"},"priceSpecification":{"@type":"UnitPriceSpecification","price":34999,"priceCurrency":"INR","description":"Starting price per gate"}}}]}</script>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><linearGradient id="essLogoGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" class="lg-s1"/><stop offset="1" class="lg-s2"/></linearGradient></defs><symbol id="ess-logo" viewBox="-8 -8 2327 460"><g transform="translate(-143 -17)"><path class="lg-h" d="M149 191.7 L146.7 196.3 L146 199 L146 203.3 L147.3 207.7 L151.3 212.3 L157.7 215.3 L164 216 L169 215.3 L177 212 L254.3 154.7 L385.3 60 L390.3 57.3 L394.7 57.7 L396.7 58.7 L515.7 151.3 L578.3 198.7 L581 201.7 L581 220.3 L580.3 221 L552.3 221.3 L542.3 224 L536.7 227.3 L531.3 232.3 L528.7 236.3 L526 242.3 L524.7 249 L524.7 420.7 L523.7 421.7 L447 422 L447 423 L471.3 453 L474.7 456.3 L528.7 456.3 L532.3 455.7 L538.7 453.7 L545 450 L550.7 445.3 L555.7 438.7 L559.3 429.7 L560.7 421.7 L560.7 256.7 L562 255.7 L589.3 255.7 L596.7 253.3 L600.7 251.3 L608.7 244.7 L612 240 L615.7 231 L616.7 225 L616.7 200.3 L614.3 190.3 L611.7 184 L609.3 180.3 L601.7 172 L472 71.7 L430 38.3 L412 25 L405.7 22 L395.3 19.7 L385.3 20.3 L378.7 22.3 L373.3 25 L220 137.7 L153.7 187Z"/><path class="lg-d" d="M210.3 313.7 L210.3 347.3 L211 348 L397.7 347.7 L392 339.3 L371 313 L211 313Z M158.7 238.7 L155 245 L153.3 252 L153.3 421.3 L155.3 430.3 L159.3 438.3 L163 443.3 L171 450.3 L179.3 454.3 L188 456.3 L455.3 456.3 L455 455 L429.3 424 L426.7 421.7 L205.3 421.7 L202.3 421 L198.3 419 L193 413.7 L191.3 410.3 L190 404.7 L190.3 262.3 L191.3 261.7 L332.7 261.7 L332.7 260.7 L307.7 229.3 L304.3 226.3 L179 226.7 L167.3 230.7 L162.3 234.3Z M397.3 199 L396.7 199.7 L397 237 L434 237.3 L434.7 236.3 L434.7 199.3Z M346 199 L346 237 L383 237.3 L383.7 236.7 L383.7 199.3Z M397.3 147.3 L396.7 148.7 L397 185 L398 185.7 L434.3 185.3 L434.3 147.7Z M346.3 147.3 L345.7 148.3 L346 185.3 L383.3 185.3 L383.3 147.7Z"/><path class="lg-w" d="M596 315 L589.3 317 L586.3 319 L583 322.3 L581 325.3 L579.7 329 L579.3 336.7 L581 342.3 L585.3 348 L592 351.7 L596.3 352.7 L599.7 352.7 L604.7 351.3 L608 349.7 L613 345 L616 339.3 L616.7 336.7 L616.7 330.7 L614.3 324.7 L609 318.7 L603 315.7Z"/><path class="lg-w lg-p lg-a0" d="M612.3 289.3 L609.3 293 L607.3 298 L607.3 300 L608.7 303.7 L610.3 305.7 L616.7 308.7 L619.3 310.7 L624.7 316 L627 320 L629.3 326 L630 334.7 L631.7 338.3 L633.7 340 L638.3 341.7 L641.3 341.3 L644.7 340 L647.3 337.3 L648.3 335 L648 325.3 L644.7 314 L639.3 304.7 L632 296.7 L624.7 291.3 L617.7 288.3 L614.7 288.3Z"/><path class="lg-w lg-p lg-a1" d="M626.3 262.3 L623.3 266 L621.7 270 L621.7 273.3 L622.7 276 L625.3 278.7 L634.3 283 L642 288.7 L650.7 298 L658 310.3 L661 318.3 L663 327.7 L662.7 343.3 L663.7 346.3 L667.3 349.7 L670.7 350.7 L673 350.7 L677.7 349 L680 346.7 L681.3 343.7 L681.3 326 L678.3 311 L671.3 294.7 L663 282.7 L655.7 275 L650.3 270.7 L640.3 264.3 L633.3 261.3 L629.3 261Z"/><path class="lg-w lg-p lg-a2" d="M641.3 234 L638.3 237.3 L636 242.7 L636 245.3 L637.3 249 L638.7 250.3 L643.3 252 L654.7 258 L667.3 268 L677.3 279 L685.7 291.7 L691 303 L694 311.7 L696 320.7 L697 328.3 L697 341.7 L695.7 350.7 L696 356 L696.7 357.3 L700.7 360.7 L702.7 361.3 L707.3 361.3 L709.3 360.7 L712 358.7 L714 355 L715.7 338.7 L715.3 326.3 L713.7 314 L710.7 302 L705.7 289.3 L701.3 280.7 L694 269.3 L689.3 263.3 L680.3 254 L673 247.7 L661.3 239.7 L648.7 233.3 L643.7 233Z"/></g><g transform="translate(645 133.2) scale(1.0590) translate(-138.7 -519.7)"><path class="lg-t" d="M1630.3 541 L1628.7 543.3 L1629 685.3 L1630.7 686.7 L1710.7 686.3 L1711.7 685.3 L1711.3 660.3 L1709 659.3 L1657.3 659.3 L1656.7 658.3 L1656.7 629.3 L1657.3 628.3 L1696.3 628.3 L1698.3 627.7 L1699.7 625 L1699.7 604 L1698.3 601.3 L1696.7 600.7 L1657 600.3 L1656.7 569.3 L1657.3 568.3 L1710 568 L1711.7 566.3 L1711.7 542.3 L1710.3 541 L1709 540.7Z M1542.7 542 L1535.7 545 L1530 550 L1526 557 L1524 564.7 L1524 662 L1525.3 668.7 L1528.3 675.3 L1533 680.7 L1535.3 682.3 L1543 685.7 L1548.7 686.7 L1582.7 686.7 L1588.3 685.7 L1591.3 684.7 L1598.3 680.7 L1601.7 677.3 L1605.7 670 L1607.7 658.7 L1607.3 633 L1605.3 631 L1583.7 631 L1582.3 631.7 L1581.3 633.7 L1581.3 653.7 L1579.7 657.7 L1577 659.7 L1574.3 660.3 L1558 660.3 L1554.3 659 L1552.3 657 L1551 653 L1551 574.3 L1552 571 L1554.3 568.7 L1556.7 567.7 L1576.7 568 L1580 570.7 L1581 572.7 L1581.3 593.7 L1582.3 595.7 L1585 596.7 L1605.3 596.3 L1607 595 L1607.7 593.3 L1607.7 569.7 L1605.7 557.7 L1601.7 550.3 L1598.3 547 L1594 544 L1586.3 541.3 L1581.3 540.7 L1550.3 540.7Z M1444.3 541 L1443 542 L1442 544.3 L1408 681.3 L1407.7 685.3 L1409 686.7 L1432.3 686.3 L1433.7 685 L1439.7 660 L1440.3 658.3 L1441.7 657.3 L1479 657.3 L1480 658 L1481 660.7 L1487 685 L1488.3 686.3 L1512.3 686.3 L1513 685.3 L1512.7 681 L1511.7 678.7 L1478.3 543 L1477 541.3 L1475 540.7Z M1460.3 577.7 L1461 578.3 L1473.3 632.7 L1472.7 633.3 L1448 633.3 L1447.3 632.7 L1447.7 629.3 L1458.7 582Z M1388.7 542 L1381.3 540.7 L1327 540.7 L1325 541.3 L1324 542.7 L1324 685 L1326 686.7 L1347.7 687 L1350.3 685.7 L1350.7 642.7 L1351.7 641.7 L1380.3 641.7 L1387 640.7 L1392.7 638.7 L1398.3 635 L1402.3 630.7 L1404.7 626.3 L1406.3 621.7 L1407.3 615 L1407.3 568.3 L1406.7 562.3 L1404.7 555.7 L1400.7 549.3 L1395.7 545Z M1351.3 567.7 L1373.7 567.3 L1376.3 568 L1379 570.3 L1380.3 574.3 L1380.3 608 L1379 611.7 L1377.3 613.3 L1374.3 614.7 L1351.7 615 L1350.7 614 L1350.7 568.7Z M1068.7 541 L1067 543 L1067.3 566.7 L1068.3 567.7 L1070 568 L1093.7 568 L1094.7 569 L1094.7 684.7 L1096.3 686.7 L1121 686.7 L1122.7 685 L1122.7 569 L1123.3 568 L1149 567.7 L1150.3 566 L1150.3 543 L1149.3 541.3 L1147.3 540.7Z M968 541.3 L967 542.7 L967 685 L969 686.7 L991.7 686.7 L993.3 685.7 L993.7 643.7 L994.7 642.7 L1012 642.7 L1013 643.7 L1023 685 L1025 686.7 L1048.3 686.3 L1049.7 684.7 L1049.7 683.3 L1038.7 638.3 L1044.7 632.7 L1047.3 628.3 L1049.7 621.3 L1050.3 616 L1050.3 568.3 L1049.7 562.3 L1046.7 553.7 L1043.7 549.3 L1038.7 545 L1034.7 543 L1027 541 L970 540.7Z M994.3 567.3 L1016.7 567.3 L1018.7 567.7 L1022 570.3 L1023.3 574.3 L1023.3 609 L1022 612.7 L1020 614.7 L1016 616 L994.7 616 L993.7 615 L993.7 568.3Z M883 541 L881 543.3 L847 680.3 L846.3 685.3 L847.7 686.7 L870.3 686.7 L871.7 686 L873.7 681 L878.7 659 L879.7 657.7 L917.7 657.3 L919.3 659.3 L925 682.7 L927 686.3 L950.3 686.7 L951.7 685.7 L951.7 682 L950.7 679.7 L917.3 543.7 L915.3 541 L914 540.7Z M899.3 578 L912 632.7 L911.3 633.3 L886.3 633.3 L886 631.7 L897.7 580.7Z M714.7 541 L713 542.7 L712.7 544 L713 684.7 L715.3 686.7 L737.3 686.7 L739.7 684.7 L740 601.3 L741.3 600.7 L742 601.3 L753 649 L762 685 L764.3 686.7 L779.7 686.7 L781 686 L782.7 683.7 L801.7 602.7 L802.3 601 L803.7 600.7 L804 683.7 L806.7 686.7 L829.7 686.3 L831.7 683.3 L831.7 544 L831 542.3 L829.7 541 L828 540.7 L799.7 540.7 L797.3 541.3 L796 542.7 L781 601.3 L773 635.3 L772.3 636 L770.7 632.7 L748.7 543.3 L747.3 541.7 L744.7 540.7Z M453.3 541 L451.7 543.3 L452 685.3 L453.7 686.7 L533.7 686.3 L534.7 685.3 L534.3 660.3 L532 659.3 L480.3 659.3 L479.7 658.3 L479.7 629.3 L480.3 628.3 L519.3 628.3 L521.3 627.7 L522.7 625 L522.7 604 L521.3 601.3 L519.7 600.7 L480 600.3 L479.7 569.3 L480.3 568.3 L533 568 L534.7 566.3 L534.7 542.3 L533.3 541 L532 540.7Z M366 542 L359 545 L353.7 549.7 L351.3 553 L349 558 L347.3 566.3 L347.3 660 L349 669.3 L351.3 674.7 L356 680.3 L359.3 682.7 L366.3 685.7 L372 686.7 L406 686.7 L411.7 685.7 L418.7 682.7 L424.3 678 L427.7 673 L429.7 667.3 L430.7 662.3 L430.7 607.3 L429.3 606 L427.7 605.7 L393.3 605.7 L391.3 606.3 L390.3 609 L390.7 631.3 L391.7 632.7 L393.7 633.3 L404 633.3 L404.7 634 L404.3 655 L401.3 659 L398.7 660 L380.3 660 L377.7 659 L375 656 L374.3 653 L374.3 574 L375.7 570.3 L379 567.7 L400 567.7 L403 570 L404.3 572.7 L404.7 586.7 L406 589 L428.3 589.3 L430.7 587.3 L430.7 566.3 L429.3 559 L425.7 551.3 L422 547.3 L417.3 544 L412 542 L404.7 540.7 L373.3 540.7Z M244.3 541 L243 542.7 L243 685 L244.7 686.7 L301.3 686.7 L308.3 685.3 L312.3 683.7 L318.3 679.7 L321.7 675.7 L324.7 669.3 L326.3 660.3 L326.3 568.7 L325.3 561 L322.7 553.7 L319.7 549.3 L314.3 545 L310.7 543 L303 541Z M272 568 L293.7 568.3 L297.3 571 L299 575 L299 652.7 L297.7 656 L293.7 659 L272 659.3 L271 658.3 L271 569Z M1238.3 521 L1231.3 524 L1226 528.7 L1222 535 L1220.3 540.3 L1219.7 545 L1220 602 L1221 604 L1224.7 606.7 L1274 622.7 L1275 623.7 L1275 651.7 L1273.3 656.3 L1269.7 659 L1254.7 659.3 L1252.3 658.7 L1249.7 656.7 L1248 653.3 L1247.7 633 L1246.7 632 L1244.7 631.3 L1222.7 631.3 L1220.7 632 L1219.7 634 L1219.7 660.3 L1221 668.3 L1224 675.3 L1228 680 L1231.7 682.7 L1238.7 685.7 L1244.3 686.7 L1278 686.7 L1284 685.7 L1291 682.7 L1296.7 678 L1300.7 671.3 L1302.7 664.3 L1302.7 605.3 L1299.7 601.7 L1297 600.3 L1248.7 584.7 L1247.7 583.3 L1247.7 555 L1249.3 550 L1253.3 547.3 L1267.7 547 L1270.7 547.7 L1273.7 550.3 L1274.7 553 L1275 573.3 L1276.3 574.7 L1301.7 574.7 L1303 572.7 L1303 547 L1301.7 538.3 L1299.3 532.7 L1296.7 528.7 L1291.3 524 L1284.3 521 L1277 519.7 L1245.7 519.7Z M626.7 521 L619.3 524.3 L613.7 529.7 L611 534 L609 539.7 L608 545.7 L608.3 601.3 L609.3 603.7 L613.3 606.7 L662.7 622.7 L663.3 623.7 L663.3 652.3 L663 654.3 L661.3 657 L658 659 L641.7 659 L639.7 658 L636.7 654.3 L636.3 633.7 L635.3 632 L633.3 631.3 L610 631.7 L608.7 632.7 L608 634.3 L608 658.7 L609 666.7 L611 672.3 L614 677.3 L617.7 681 L626 685.3 L633 686.7 L666.7 686.7 L673.7 685.3 L680 682.3 L685.7 677.3 L688.7 672.3 L690.7 666.7 L691.7 659.7 L691.3 606 L688.7 602 L684.7 600 L637 584.7 L636.3 583.7 L636.3 554 L637.7 550.3 L641.7 547.3 L656.3 547 L659 547.7 L662 550 L663 552 L663.3 572.7 L664.7 574.7 L690 574.7 L691 574 L691.7 572.3 L691.7 548 L690.7 540 L688.7 534.3 L685.7 529.3 L679.3 523.7 L673 521 L665.3 519.7 L634.3 519.7Z M140.3 520 L138.7 522.3 L139 685.3 L140.7 686.7 L220 686.7 L221.7 685.3 L221.3 660.3 L219 659.3 L167 659.3 L166.3 658.7 L166.3 617.7 L167 617 L206.3 617 L208 616.3 L209.7 613.7 L209.7 592.7 L208 589.7 L206 589 L168 589.3 L166.3 588.3 L166.3 548 L167 547.3 L220 547 L221.7 545.3 L221.7 521.3 L220.3 520 L219 519.7Z"/></g></symbol></svg>
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header" id="siteHeader">
   <div class="container nav-wrap">
-    <a href="#home" class="brand" aria-label="Edge Smart Space home">
-      <!-- LOGO (header): replace assets/img/logo/logo-horizontal.svg to update -->
-      <img class="logo-full" src="assets/img/logo/logo-horizontal.svg" alt="Edge Smart Space" width="230" height="44" fetchpriority="high">
+    <a href="#home" class="brand" aria-label="Edge Smart Space — home">
+      <svg role="img" aria-label="Edge Smart Space"><use href="#ess-logo"/></svg>
     </a>
-
     <nav class="main-nav" id="mainNav" aria-label="Primary">
-      <ul>
-        <li><a href="#home" class="nav-link">Home</a></li>
-        <li><a href="#products" class="nav-link">Products</a></li>
-        <li><a href="#solutions" class="nav-link">Solutions</a></li>
-        <li><a href="#pricing" class="nav-link">Pricing</a></li>
-        <li><a href="#contact" class="nav-link">Contact Us</a></li>
-      </ul>
-      <a href="#contact" class="btn btn-primary nav-cta">Book Consultation</a>
-    </nav>
-
-    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-
-<main id="main">
-
-<!-- ============ 1. HERO ============ -->
-<section class="hero" id="home" aria-labelledby="hero-title">
-  <canvas id="hero3d" aria-hidden="true"></canvas>
-  <div class="hero-glow" aria-hidden="true"></div>
-  <div class="container hero-content">
-    <p class="eyebrow"><span class="dot"></span> Smart Home Automation · Delhi NCR</p>
-    <h1 id="hero-title">Redefine Your Living with <span class="grad">Edge Smart Space.</span></h1>
-    <p class="hero-sub">Lighting, curtains, locks, cameras and gates — designed as one intelligent ecosystem, installed by our engineers, and controlled from a single app or your voice.</p>
-    <div class="hero-ctas">
-      <a href="#products" class="btn btn-primary btn-lg">Explore Ecosystem</a>
-      <a href="#contact" class="btn btn-ghost btn-lg">Contact Sales</a>
-    </div>
-    <ul class="hero-stats" aria-label="Highlights">
-      <li><strong data-count="500">0</strong><span>+ homes automated</span></li>
-      <li><strong data-count="40">0</strong><span>+ device brands integrated</span></li>
-      <li><strong data-count="24">0</strong><span>/7 remote support</span></li>
-    </ul>
-  </div>
-  <a href="#products" class="scroll-cue" aria-label="Scroll to products"><span></span></a>
-</section>
-
-<!-- ============ 2. PRODUCT SHOWCASE ============ -->
-<section class="section intro" id="products" aria-labelledby="products-title">
-  <div class="container narrow center">
-    <p class="eyebrow">The Ecosystem</p>
-    <h2 id="products-title">Every room. One <span class="grad">intelligent</span> system.</h2>
-    <p class="lead">Scroll through the four pillars of an Edge Smart Space home.</p>
-  </div>
-</section>
-
-<!-- 2a. Smart Curtain Control -->
-<section class="scene scene-curtain" id="curtain" aria-labelledby="curtain-title">
-  <div class="curtain-stage">
-    <div class="window" id="curtainWindow">
-      <div class="window-view" aria-hidden="true">
-        <div class="sun"></div>
-        <div class="skyline"></div>
-      </div>
-      <div class="curtain-rail" aria-hidden="true"></div>
-      <div class="curtain curtain-left" aria-hidden="true"></div>
-      <div class="curtain curtain-right" aria-hidden="true"></div>
-      <div class="window-dim" aria-hidden="true"></div>
-      <div class="curtain-status" aria-hidden="true"><span class="pill">Morning Scene</span> <span id="curtainPct">0</span>% open</div>
-    </div>
-
-    <div class="scene-copy curtain-copy">
-      <p class="eyebrow">01 · Smart Curtain Control</p>
-      <h2 id="curtain-title">Wake up to sunlight, <span class="grad">not an alarm.</span></h2>
-      <p>Whisper-quiet motorised tracks open your curtains and blinds on a schedule, at sunrise, or with a single tap. Pair them with lighting scenes for cinematic movie nights or privacy at dusk.</p>
-      <ul class="feature-list">
-        <li><b>Silent motors</b> under 35 dB for bedrooms and living rooms</li>
-        <li><b>Sunrise &amp; sunset automation</b> based on your location</li>
-        <li><b>Works with</b> Alexa, Google Home, Siri &amp; the Edge app</li>
-        <li><b>Retrofit-friendly</b> — fits existing curtains, rollers and Zebra blinds</li>
-      </ul>
-      <p class="from">Starts from <span class="price" data-inr="₹8,999" data-usd="$129">₹8,999</span> / window</p>
-    </div>
-  </div>
-</section>
-
-<!-- 2b. Smart Switches & Lighting -->
-<section class="section scene-lighting" id="lighting" aria-labelledby="lighting-title">
-  <div class="container split">
-    <div class="flip-wrap">
-      <div class="flip-card" id="flipCard">
-        <div class="glass-panel" role="group" aria-label="Interactive switch panel demo">
-          <div class="panel-top">
-            <span class="panel-room">Living Room</span>
-            <span class="panel-time" id="panelTime">--:--</span>
-          </div>
-          <div class="switch-grid">
-            <button class="touch-key on" data-light="ceiling" aria-pressed="true"><i></i><span>Ceiling</span></button>
-            <button class="touch-key" data-light="cove" aria-pressed="false"><i></i><span>Cove</span></button>
-            <button class="touch-key on" data-light="pendant" aria-pressed="true"><i></i><span>Pendant</span></button>
-            <button class="touch-key" data-light="accent" aria-pressed="false"><i></i><span>Accent</span></button>
-          </div>
-          <label class="slider-row">
-            <span>Brightness</span>
-            <input type="range" id="dimmer" min="0" max="100" value="70" aria-label="Brightness">
-          </label>
-          <label class="slider-row">
-            <span>Warm ↔ Cool</span>
-            <input type="range" id="cct" min="2700" max="6500" value="3500" step="100" aria-label="Colour temperature">
-          </label>
-          <div class="scene-chips">
-            <button class="chip" data-scene="relax">Relax</button>
-            <button class="chip" data-scene="focus">Focus</button>
-            <button class="chip" data-scene="movie">Movie</button>
-            <button class="chip" data-scene="off">All Off</button>
-          </div>
-        </div>
-        <div class="room-glow" id="roomGlow" aria-hidden="true"></div>
-      </div>
-    </div>
-
-    <div class="scene-copy">
-      <p class="eyebrow">02 · Smart Switches &amp; Lighting Control</p>
-      <h2 id="lighting-title">Glass-touch panels. <span class="grad">Mood on demand.</span></h2>
-      <p>Replace dated switchboards with tempered-glass touch panels that dim, colour-tune and run entire scenes. Every light becomes app, voice and schedule controlled — no rewiring of your walls.</p>
-      <ul class="feature-list">
-        <li><b>Tunable white &amp; RGB</b> from warm 2700K to daylight 6500K</li>
-        <li><b>One-touch scenes</b> — Relax, Focus, Movie, Away</li>
-        <li><b>Energy insights</b> per circuit, with auto-off when rooms are empty</li>
-        <li><b>Fits standard Indian modular boxes</b> — 2, 4, 6 and 8 module</li>
-      </ul>
-      <p class="from">Starts from <span class="price" data-inr="₹9,999" data-usd="$149">₹9,999</span> / room</p>
-      <p class="hint">Try it — tap the panel keys and drag the sliders.</p>
-    </div>
-  </div>
-</section>
-
-<!-- 2c. Smart Locks & CCTV -->
-<section class="scene scene-security" id="security" aria-labelledby="security-title">
-  <div class="security-stage">
-    <div class="lens" id="lens" aria-hidden="true">
-      <div class="lens-ring"></div>
-      <div class="radar"><div class="sweep"></div><span class="blip b1"></span><span class="blip b2"></span><span class="blip b3"></span></div>
-    </div>
-
-    <div class="security-reveal" id="securityReveal">
-      <div class="container split">
-        <div class="security-visuals">
-          <div class="lock-card" id="lockCard">
-            <div class="fingerprint" aria-hidden="true">
-              <svg viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <path d="M20 50c-3-5-4-11-4-18a16 16 0 0 1 32 0"/><path d="M26 54c-3-6-4-13-4-22a10 10 0 0 1 20 0c0 6-1 11-3 16"/>
-                <path d="M32 32c0 9-1 16-5 24"/><path d="M38 34c0 6-1 12-3 17"/><path d="M12 40c-1-3-1-5-1-8a21 21 0 0 1 35-16"/><path d="M52 26c1 2 1 4 1 6 0 4 0 8-1 11"/>
-              </g></svg>
-              <span class="scan-line"></span>
-            </div>
-            <p class="lock-state"><span class="lock-dot"></span><span id="lockText">Scanning…</span></p>
-            <p class="lock-meta">Front Door · Biometric + PIN + App</p>
-          </div>
-
-          <div class="cam-grid" aria-label="Live camera feed mockups">
-                        <figure class="cam">
-              <div class="cam-feed cam-0" role="img" aria-label="Main Gate camera placeholder"></div>
-              <figcaption><span class="rec"></span>LIVE · Main Gate <time class="cam-clock"></time></figcaption>
-            </figure>
-                        <figure class="cam">
-              <div class="cam-feed cam-1" role="img" aria-label="Driveway camera placeholder"></div>
-              <figcaption><span class="rec"></span>LIVE · Driveway <time class="cam-clock"></time></figcaption>
-            </figure>
-                        <figure class="cam">
-              <div class="cam-feed cam-2" role="img" aria-label="Front Porch camera placeholder"></div>
-              <figcaption><span class="rec"></span>LIVE · Front Porch <time class="cam-clock"></time></figcaption>
-            </figure>
-                        <figure class="cam">
-              <div class="cam-feed cam-3" role="img" aria-label="Backyard camera placeholder"></div>
-              <figcaption><span class="rec"></span>LIVE · Backyard <time class="cam-clock"></time></figcaption>
-            </figure>
-                      </div>
-        </div>
-
-        <div class="scene-copy">
-          <p class="eyebrow">03 · Smart Door Locks &amp; CCTV Security</p>
-          <h2 id="security-title">See everything. <span class="grad">Unlock only the right people.</span></h2>
-          <p>Biometric smart locks open with your fingerprint, PIN, card or phone — and send one-time codes to guests and staff. 2K night-vision cameras stream live to your phone, with AI person detection that ignores swaying trees.</p>
-          <ul class="feature-list">
-            <li><b>Fingerprint, PIN, RFID &amp; app</b> unlock with tamper alarms</li>
-            <li><b>Temporary access codes</b> for guests, maids and drivers</li>
-            <li><b>2K / 4MP cameras</b> with colour night vision &amp; 2-way audio</li>
-            <li><b>Encrypted cloud + local NVR</b> backup with 30-day history</li>
-          </ul>
-          <p class="from">Locks from <span class="price" data-inr="₹14,999" data-usd="$199">₹14,999</span> · CCTV kits from <span class="price" data-inr="₹19,999" data-usd="$249">₹19,999</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 2d. Motion Sensors & Gate Automation -->
-<section class="section scene-automation" id="automation" aria-labelledby="automation-title">
-  <div class="container">
-    <div class="center narrow">
-      <p class="eyebrow">04 · Motion Sensors &amp; Smart Gate Automation</p>
-      <h2 id="automation-title">Your home <span class="grad">reacts before you ask.</span></h2>
-      <p class="lead">Presence sensors and automated gates turn everyday moments into effortless routines.</p>
-    </div>
-
-    <div class="auto-grid">
-      <article class="auto-card flow-card">
-        <h3>Arriving Home Flow</h3>
-        <ol class="flow">
-          <li><span class="node">🚗</span><div><b>Car detected</b><small>Gate camera recognises your plate</small></div></li>
-          <li><span class="node">⛩</span><div><b>Gate opens</b><small>Sliding / swing gate motor activates</small></div></li>
-          <li><span class="node">💡</span><div><b>Porch lights 100%</b><small>Pathway &amp; foyer scene runs</small></div></li>
-          <li><span class="node">🔓</span><div><b>Door unlocks</b><small>Only when your phone is nearby</small></div></li>
-        </ol>
-      </article>
-
-      <article class="auto-card gate-card">
-        <h3>Smart Gate Automation</h3>
-        <p class="gate-status" aria-live="off"><span class="gs-dot"></span><span id="gateStatus">Monitoring driveway</span></p>
-        <div class="gate-visual" id="gateVisual" aria-hidden="true">
-          <div class="gate-car"><span class="car-roof"></span><span class="car-body"><i class="hl hl-l"></i><i class="hl hl-r"></i></span></div>
-          <div class="gate-post left"><span class="lamp"></span></div>
-          <div class="gate-leaf leaf-l"></div>
-          <div class="gate-leaf leaf-r"></div>
-          <div class="gate-post right"><span class="lamp"></span></div>
-          <div class="gate-beam"></div>
-        </div>
-        <p>Swing and sliding gate motors with app, remote, RFID and ANPR camera control. Obstacle sensors stop the gate instantly.</p>
-        <p class="from">Starts from <span class="price" data-inr="₹34,999" data-usd="$449">₹34,999</span> / gate</p>
-      </article>
-
-      <article class="auto-card">
-        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M8 8a6 6 0 0 0 0 8M16 8a6 6 0 0 1 0 8M5 5a10 10 0 0 0 0 14M19 5a10 10 0 0 1 0 14"/></svg></div>
-        <h3>Motion &amp; Presence Sensors</h3>
-        <p>PIR and mmWave sensors know when a room is occupied — even when you're sitting still.</p>
-        <p class="from">From <span class="price" data-inr="₹2,499" data-usd="$39">₹2,499</span> / sensor</p>
-      </article>
-
-      <article class="auto-card">
-        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3"/><circle cx="12" cy="12" r="4"/></svg></div>
-        <h3>Night Path Lighting</h3>
-        <p>Step out of bed and a soft 10% glow guides you — no harsh lights at 3 AM.</p>
-      </article>
-
-      <article class="auto-card">
-        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
-        <h3>Away Mode Intrusion Alerts</h3>
-        <p>Motion while you're away triggers cameras, sirens and an instant phone alert with a clip.</p>
-      </article>
-
-      <article class="auto-card">
-        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div>
-        <h3>Energy Auto-Off</h3>
-        <p>Lights and ACs switch off in empty rooms, cutting electricity bills by up to 30%.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SOLUTIONS ============ -->
-<section class="section solutions" id="solutions" aria-labelledby="solutions-title">
-  <div class="container">
-    <div class="center narrow">
-      <p class="eyebrow">Solutions</p>
-      <h2 id="solutions-title">Designed for how <span class="grad">you</span> live.</h2>
-    </div>
-    <div class="sol-grid">
-      <article class="sol-card"><h3>Apartments</h3><p>Wireless, no-rewire retrofits that move with you. Ideal for 1–3 BHK flats and rentals.</p></article>
-      <article class="sol-card"><h3>Villas &amp; Bungalows</h3><p>Multi-floor lighting, perimeter security, gate automation and centralised control.</p></article>
-      <article class="sol-card"><h3>New Construction</h3><p>Work with your architect from the drawing stage for invisible, future-proof wiring.</p></article>
-      <article class="sol-card"><h3>Offices &amp; Studios</h3><p>Access control, occupancy-based lighting and energy reporting for small workplaces.</p></article>
-    </div>
-
-    <ol class="process" aria-label="How it works">
-      <li><span>1</span><h3>Consult</h3><p>Free call or site visit to understand your space and routines.</p></li>
-      <li><span>2</span><h3>Design</h3><p>A room-by-room plan with a transparent, itemised quote.</p></li>
-      <li><span>3</span><h3>Install</h3><p>Certified engineers install and configure in 1–5 days.</p></li>
-      <li><span>4</span><h3>Support</h3><p>App onboarding, warranty and 24/7 remote assistance.</p></li>
-    </ol>
-  </div>
-</section>
-
-<!-- ============ 3. PRICING ============ -->
-<section class="section pricing" id="pricing" aria-labelledby="pricing-title">
-  <div class="container">
-    <div class="center narrow">
-      <p class="eyebrow">Pricing</p>
-      <h2 id="pricing-title">Transparent pricing. <span class="grad">Tailored homes.</span></h2>
-      <p class="lead">Start with a single room or automate your entire estate. Final quotes depend on room count, wiring and hardware choices.</p>
-      <div class="currency-toggle" role="group" aria-label="Currency">
-        <button class="cur active" data-cur="inr" aria-pressed="true">₹ INR</button>
-        <button class="cur" data-cur="usd" aria-pressed="false">$ USD</button>
-      </div>
-    </div>
-
-    <h3 class="sub-title">Individual products</h3>
-    <ul class="alacarte">
-            <li>
-        <span class="ac-name">Smart Curtain Control</span>
-        <span class="ac-price">Starts from <b class="price" data-inr="₹8,999" data-usd="$129">₹8,999</b> <small>/ window</small></span>
-      </li>
-            <li>
-        <span class="ac-name">Smart Lighting &amp; Switches</span>
-        <span class="ac-price">Starts from <b class="price" data-inr="₹9,999" data-usd="$149">₹9,999</b> <small>/ room</small></span>
-      </li>
-            <li>
-        <span class="ac-name">Smart Door Locks</span>
-        <span class="ac-price">Starts from <b class="price" data-inr="₹14,999" data-usd="$199">₹14,999</b> <small>/ door</small></span>
-      </li>
-            <li>
-        <span class="ac-name">CCTV Security Systems</span>
-        <span class="ac-price">Starts from <b class="price" data-inr="₹19,999" data-usd="$249">₹19,999</b> <small>/ 4-cam kit</small></span>
-      </li>
-            <li>
-        <span class="ac-name">Motion Sensors</span>
-        <span class="ac-price">Starts from <b class="price" data-inr="₹2,499" data-usd="$39">₹2,499</b> <small>/ sensor</small></span>
-      </li>
-            <li>
-        <span class="ac-name">Smart Gate Automation</span>
-        <span class="ac-price">Starts from <b class="price" data-inr="₹34,999" data-usd="$449">₹34,999</b> <small>/ gate</small></span>
-      </li>
-          </ul>
-
-    <h3 class="sub-title">Whole-home packages</h3>
-    <div class="plans">
-            <article class="plan">
-                <p class="plan-tier">Essential</p>
-        <h4>Starter Smart Pack</h4>
-        <p class="plan-fit">1-BHK / Apartment</p>
-                  <p class="plan-price"><small>Starts from</small><b class="price" data-inr="₹59,999" data-usd="$799">₹59,999</b></p>
-                <ul>
-          <li>Smart lighting in up to 3 rooms</li><li>Smart door lock with app + PIN</li><li>Smart curtain control (2 windows)</li><li>Voice assistant integration</li><li>Professional installation</li><li>1-year warranty &amp; support</li>        </ul>
-        <a href="#contact" class="btn btn-ghost" data-plan="Starter Smart Pack">
-          Get a Quote        </a>
-      </article>
-            <article class="plan featured">
-        <span class="badge">Most Popular</span>        <p class="plan-tier">Advanced</p>
-        <h4>Advanced Comfort Pack</h4>
-        <p class="plan-fit">3-BHK / Villa</p>
-                  <p class="plan-price"><small>Starts from</small><b class="price" data-inr="₹1,89,999" data-usd="$2,499">₹1,89,999</b></p>
-                <ul>
-          <li>Everything in Starter</li><li>Glass-touch smart switches throughout</li><li>Motion sensors &amp; automation scenes</li><li>4-camera CCTV with cloud backup</li><li>Biometric smart lock</li><li>2-year warranty &amp; priority support</li>        </ul>
-        <a href="#contact" class="btn btn-primary" data-plan="Advanced Comfort Pack">
-          Get a Quote        </a>
-      </article>
-            <article class="plan">
-                <p class="plan-tier">Complete Ecosystem</p>
-        <h4>Edge Ultimate Ecosystem</h4>
-        <p class="plan-fit">Full Smart Estate</p>
-                  <p class="plan-price"><small>Bespoke</small><b>Custom Pricing</b></p>
-                <ul>
-          <li>Everything in Advanced</li><li>Smart gate automation</li><li>Centralised multi-zone CCTV</li><li>Multi-zone lighting &amp; climate</li><li>Complete voice + app integration</li><li>Dedicated project manager &amp; AMC</li>        </ul>
-        <a href="#contact" class="btn btn-ghost" data-plan="Edge Ultimate Ecosystem">
-          Book a Site Visit        </a>
-      </article>
-          </div>
-    <p class="fine">Prices are indicative starting points inclusive of standard installation within Delhi NCR; GST extra. A free site survey confirms your final quote.</p>
-  </div>
-</section>
-
-<!-- ============ 4. CONTACT ============ -->
-<section class="section contact" id="contact" aria-labelledby="contact-title">
-  <div class="container split contact-split">
-    <div class="scene-copy">
-      <p class="eyebrow">Contact Us</p>
-      <h2 id="contact-title">Book your <span class="grad">free consultation.</span></h2>
-      <p>Tell us about your space. A smart home specialist will call you within one working day with ideas and an estimate — no obligation.</p>
-      <ul class="contact-points">
-        <li><b>Email</b><a href="mailto:edgesmartspace@gmail.com">edgesmartspace@gmail.com</a></li>
-        <li><b>Call</b><a href="tel:+919876543210">+91 98765 43210</a></li>
-        <li><b>WhatsApp</b><a href="https://wa.me/919876543210?text=Hi%20Edge%20Smart%20Space%21%20I%27m%20interested%20in%20automating%20my%20home.%20Can%20you%20help%20me%20get%20started%3F" target="_blank" rel="noopener">Chat instantly</a></li>
-        <li><b>Hours</b><span>Mon–Sat, 10 AM – 7 PM</span></li>
-      </ul>
-    </div>
-
-    <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="post" novalidate>
-      <!-- Form delivery: get a free access key at https://web3forms.com (enter edgesmartspace@gmail.com) and paste it below -->
-      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
-      <input type="hidden" name="subject" value="New consultation request — Edge Smart Space website">
-      <input type="hidden" name="from_name" value="Edge Smart Space Website">
-      <div class="hp" aria-hidden="true"><label>Leave empty <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label></div>
-
-      <div class="field">
-        <label for="f-name">Full name *</label>
-        <input id="f-name" name="name" type="text" required minlength="2" maxlength="80" autocomplete="name">
-        <small class="err"></small>
-      </div>
-      <div class="field-row">
-        <div class="field">
-          <label for="f-phone">Phone *</label>
-          <input id="f-phone" name="phone" type="tel" required pattern="[0-9+()\-\s]{8,20}" autocomplete="tel" inputmode="tel">
-          <small class="err"></small>
-        </div>
-        <div class="field">
-          <label for="f-email">Email *</label>
-          <input id="f-email" name="email" type="email" required maxlength="120" autocomplete="email">
-          <small class="err"></small>
-        </div>
-      </div>
-      <div class="field-row">
-        <div class="field">
-          <label for="f-city">City</label>
-          <input id="f-city" name="city" type="text" maxlength="60" autocomplete="address-level2">
-          <small class="err"></small>
-        </div>
-        <div class="field">
-          <label for="f-property">Property type *</label>
-          <select id="f-property" name="property" required>
-            <option value="">Select…</option>
-            <option>Apartment (1–2 BHK)</option>
-            <option>Apartment (3+ BHK)</option>
-            <option>Villa / Bungalow</option>
-            <option>New Construction</option>
-            <option>Office / Commercial</option>
-          </select>
-          <small class="err"></small>
-        </div>
-      </div>
-      <fieldset class="field">
-        <legend>I'm interested in</legend>
-        <div class="checks">
-                    <label class="check"><input type="checkbox" name="interests[]" value="curtain"><span>Smart Curtain Control</span></label>
-                    <label class="check"><input type="checkbox" name="interests[]" value="lighting"><span>Smart Lighting &amp; Switches</span></label>
-                    <label class="check"><input type="checkbox" name="interests[]" value="lock"><span>Smart Door Locks</span></label>
-                    <label class="check"><input type="checkbox" name="interests[]" value="cctv"><span>CCTV Security Systems</span></label>
-                    <label class="check"><input type="checkbox" name="interests[]" value="sensor"><span>Motion Sensors</span></label>
-                    <label class="check"><input type="checkbox" name="interests[]" value="gate"><span>Smart Gate Automation</span></label>
-                  </div>
-      </fieldset>
-      <div class="field">
-        <label for="f-plan">Package</label>
-        <select id="f-plan" name="plan">
-          <option value="">Not sure yet</option>
-          <option>Starter Smart Pack</option><option>Advanced Comfort Pack</option><option>Edge Ultimate Ecosystem</option>        </select>
-      </div>
-      <div class="field">
-        <label for="f-msg">Tell us about your project</label>
-        <textarea id="f-msg" name="message" rows="4" maxlength="2000" placeholder="e.g. 3-BHK in Gurugram, want lighting + curtains in living room and a smart lock."></textarea>
-        <small class="err"></small>
-      </div>
-      <label class="check consent"><input type="checkbox" name="consent" value="1" required><span>I agree to be contacted by Edge Smart Space about my enquiry.</span></label>
-      <small class="err consent-err"></small>
-
-      <button type="submit" class="btn btn-primary btn-lg btn-block" id="submitBtn">
-        <span class="btn-label">Request Consultation</span><span class="spinner" aria-hidden="true"></span>
-      </button>
-      <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-    </form>
-  </div>
-</section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <!-- LOGO (footer): replace assets/img/logo/logo-stacked.svg to update -->
-      <img class="footer-logo" src="assets/img/logo/logo-stacked.svg" alt="Edge Smart Space" width="240" height="103" loading="lazy">
-      <p>Premium smart home automation — designed, installed and supported by one team. Lighting, curtains, locks, CCTV, sensors and gates, unified in a single app.</p>
-      <ul class="socials" aria-label="Social media">
-        <li><a href="https://instagram.com/edgesmartspace" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" class="fill"/></svg></a></li>
-        <li><a href="https://facebook.com/edgesmartspace" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5a.5.5 0 0 1 .5-.5z"/></svg></a></li>
-        <li><a href="https://linkedin.com/company/edgesmartspace" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></a></li>
-        <li><a href="https://youtube.com/@edgesmartspace" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z" class="fill"/></svg></a></li>
-        <li><a href="https://x.com/edgesmartspace" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4 4 20"/></svg></a></li>
-      </ul>
-    </div>
-
-    <nav aria-label="Quick links">
-      <h3>Quick Links</h3>
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#products">Products</a></li>
@@ -524,58 +63,409 @@
         <li><a href="#contact">Contact Us</a></li>
       </ul>
     </nav>
-
-    <nav aria-label="Products">
-      <h3>Products</h3>
-      <ul>
-                <li><a href="#curtain">Smart Curtain Control</a></li>
-                <li><a href="#lighting">Smart Lighting &amp; Switches</a></li>
-                <li><a href="#lock">Smart Door Locks</a></li>
-                <li><a href="#security">CCTV Security Systems</a></li>
-                <li><a href="#automation">Motion Sensors</a></li>
-                <li><a href="#automation">Smart Gate Automation</a></li>
-              </ul>
-    </nav>
-
-    <div>
-      <h3>Get in Touch</h3>
-      <address>
-        <a href="mailto:edgesmartspace@gmail.com">edgesmartspace@gmail.com</a><br>
-        <a href="tel:+919876543210">+91 98765 43210</a><br>
-        New Delhi, Delhi, India
-      </address>
+    <div class="nav-actions">
+      <button class="theme-switch" id="themeSwitch" type="button" role="switch" aria-checked="false" aria-label="Dark mode">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <span class="knob" aria-hidden="true"></span>
+      </button>
+      <a href="#contact" class="btn btn-primary btn-sm nav-cta">Book Consultation</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
     </div>
   </div>
+</header>
 
-  <div class="container footer-seo">
-    <p>Smart home automation in Delhi NCR · Home automation company in Gurugram &amp; Noida · Smart lighting control · Smart curtain motors · Biometric smart door locks · CCTV installation · Motion sensor automation · Automatic gate openers · Matter &amp; voice assistant compatible smart homes · Villa &amp; apartment automation</p>
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home" aria-labelledby="hero-title">
+  <div class="hero-bg day" role="img" aria-label="Modern living room with walnut slat wall, linen curtains and city view in daylight"></div>
+  <div class="hero-bg dusk" role="img" aria-label="The same living room at dusk with warm cove lighting"></div>
+  <div class="container">
+    <div class="hero-content">
+      <p class="eyebrow hero-eyebrow">Smart Home Automation · Delhi NCR</p>
+      <h1 id="hero-title">Redefine <span class="soft">your living.</span></h1>
+      <p class="hero-sub">Lighting, curtains and security in one quiet system, controlled with a single touch.</p>
+      <div class="hero-ctas">
+        <a href="#products" class="btn btn-primary">Explore Ecosystem</a>
+        <a href="#contact" class="btn btn-ghost">Contact Sales</a>
+      </div>
+      <ul class="hero-trust" aria-label="Highlights">
+        <li>500+ homes automated</li>
+        <li>Up to 5-year warranty</li>
+        <li>24/7 remote support</li>
+      </ul>
+    </div>
   </div>
+</section>
 
-  <div class="container footer-bottom">
-    <p>© <span id="year">2026</span> Edge Smart Space. All rights reserved.</p>
-    <p><a href="sitemap.xml">Sitemap</a></p>
+<nav class="cat-strip" id="products" aria-label="Product categories">
+  <div class="container">
+    <ul>
+      <li><a href="#touch-panels"><b>01</b> Touch Panels</a></li>
+      <li><a href="#curtains"><b>02</b> Automatic Curtains</a></li>
+      <li><a href="#security"><b>03</b> Locks &amp; CCTV</a></li>
+      <li><a href="#automation"><b>04</b> Sensors &amp; Gates</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================= 01 TOUCH PANELS ================= -->
+<section class="section" id="touch-panels" aria-labelledby="tp-title">
+  <div class="container">
+    <div class="sec-head rv">
+      <p class="eyebrow"><span class="num">01</span> Touch Panels &amp; Lighting</p>
+      <h2 id="tp-title">One touch. Every mood.</h2>
+      <p class="lead">Tempered-glass panels replace rows of switches with scenes. Try it — tap a scene and watch the room change.</p>
+    </div>
+
+    <div class="tp-stage rv" id="tpStage">
+      <div class="tp-frame">
+        <img class="tp-img on" data-mood="day" src="assets/img/render/mood_day-1600.webp"
+             srcset="assets/img/render/mood_day-960.webp 960w, assets/img/render/mood_day-1600.webp 1600w"
+             sizes="(max-width: 1240px) 100vw, 1200px" width="1600" height="900" loading="lazy" decoding="async"
+             alt="Living room in natural daylight, lights off">
+        <img class="tp-img" data-mood="warm" data-srcset="assets/img/render/mood_warm-960.webp 960w, assets/img/render/mood_warm-1600.webp 1600w" sizes="(max-width: 1240px) 100vw, 1200px" width="1600" height="900" decoding="async" alt="Living room in warm evening light: cove, pendants and lamps at 2700K">
+        <img class="tp-img" data-mood="cool" data-srcset="assets/img/render/mood_cool-960.webp 960w, assets/img/render/mood_cool-1600.webp 1600w" sizes="(max-width: 1240px) 100vw, 1200px" width="1600" height="900" decoding="async" alt="Living room in cool night light with blue accent glow">
+        <img class="tp-img" data-mood="movie" data-srcset="assets/img/render/mood_movie-960.webp 960w, assets/img/render/mood_movie-1600.webp 1600w" sizes="(max-width: 1240px) 100vw, 1200px" width="1600" height="900" decoding="async" alt="Living room dimmed for a movie">
+        <img class="tp-img" data-mood="off" data-srcset="assets/img/render/mood_off-960.webp 960w, assets/img/render/mood_off-1600.webp 1600w" sizes="(max-width: 1240px) 100vw, 1200px" width="1600" height="900" decoding="async" alt="Living room with all lights off at night">
+        <span class="tp-loading">Loading scene…</span>
+      </div>
+
+      <div class="tp-panel" role="group" aria-label="Touch panel demo">
+        <div class="tp-top"><b>Living Room</b><time id="tpClock">--:--</time></div>
+        <div class="tp-keys" id="tpKeys">
+          <button class="tp-key" type="button" data-mood="day" aria-pressed="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>Daylight</button>
+          <button class="tp-key" type="button" data-mood="warm" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg>Warm Evening</button>
+          <button class="tp-key" type="button" data-mood="cool" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>Cool Night</button>
+          <button class="tp-key" type="button" data-mood="movie" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8"/></svg>Movie</button>
+          <button class="tp-key" type="button" data-mood="off" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v8M6.3 6.3a8 8 0 1 0 11.4 0"/></svg>All Off</button>
+          <a class="tp-key" href="#curtains">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h18M5 4v16M19 4v16M5 4c2 4 2 12 0 16M19 4c-2 4-2 12 0 16"/></svg>Curtains ↓</a>
+        </div>
+        <label class="tp-dim"><span>Dimmer</span><input type="range" id="tpDim" min="40" max="110" value="100" aria-label="Brightness"><output id="tpDimOut">100%</output></label>
+        <p class="tp-status" id="tpStatus"><b>Daylight</b> · lights off, curtains open</p>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div class="price-block rv">
+        <p class="from">Starts from <span class="price" data-inr="₹9,999" data-usd="$149">₹9,999</span> <small>per room</small></p>
+        <a href="#contact" class="link-arrow" data-plan="">Get a quote</a>
+      </div>
+      <div class="feature rv" style="--d:.05s"><h3>Scenes, not switches</h3><p>Daylight, Warm Evening, Movie, Away — every light, curtain and AC in one tap.</p></div>
+      <div class="feature rv" style="--d:.1s"><h3>Tunable light</h3><p>Dim smoothly and shift from warm 2700K to crisp 6500K throughout the day.</p></div>
+      <div class="feature rv" style="--d:.15s"><h3>Fits Indian boxes</h3><p>2, 4, 6 and 8-module glass panels for standard modular boxes. No rewiring.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 AUTOMATIC CURTAINS ================= -->
+<section class="cur-scene" id="curtains" aria-labelledby="cur-title">
+  <div class="cur-sticky">
+    <canvas class="cur-canvas" id="curCanvas" aria-hidden="true"></canvas>
+    <img class="cur-fallback" src="assets/img/render/curtain-1280-15.webp" width="1280" height="720" loading="lazy" decoding="async" alt="Living room with linen curtains fully open onto a city view">
+    <div class="cur-scrim"></div>
+    <div class="cur-shade" id="curShade"></div>
+    <div class="cur-head container" id="curHead">
+      <p class="eyebrow"><span class="num">02</span> Automatic Curtains</p>
+      <h2 id="cur-title">Wake up to sunlight, not an alarm.</h2>
+    </div>
+    <div class="cur-status" aria-hidden="true"><span class="dot"></span>Morning scene · <b id="curPct">0</b>% open</div>
+    <div class="cur-copy" id="curCopy">
+      <h3>Whisper-quiet motorised curtains</h3>
+      <p>Your curtains open with the sunrise, close at dusk and glide on a single tap — retrofitted onto the tracks you already have.</p>
+      <ul class="check-list">
+        <li><b>Silent motors</b> under 35 dB for bedrooms</li>
+        <li><b>Sunrise &amp; sunset</b> schedules, by location</li>
+        <li><b>Alexa, Google, Siri</b> and the Edge app</li>
+      </ul>
+      <div class="row">
+        <p class="from">Starts from <span class="price" data-inr="₹8,999" data-usd="$129">₹8,999</span> <small>per window</small></p>
+        <a href="#contact" class="btn btn-primary btn-sm">Get a Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 LOCKS & CCTV ================= -->
+<section class="section" id="security" aria-labelledby="sec-title">
+  <div class="container split">
+    <div class="rv">
+      <p class="eyebrow"><span class="num">03</span> Smart Locks &amp; CCTV</p>
+      <h2 id="sec-title">See everything. Let in only the right people.</h2>
+      <p class="lead">Biometric locks open with a fingerprint, PIN, card or phone. 2K night-vision cameras stream to your phone and ignore swaying trees.</p>
+      <ul class="check-list">
+        <li><b>One-time codes</b> for guests, staff and deliveries</li>
+        <li><b>AI person detection</b> with instant clips</li>
+        <li><b>Encrypted cloud + local</b> 30-day recording</li>
+      </ul>
+      <p class="from">Locks from <b class="price" data-inr="₹14,999" data-usd="$199" style="display:inline;font-size:1.15rem">₹14,999</b> · CCTV kits from <b class="price" data-inr="₹19,999" data-usd="$249" style="display:inline;font-size:1.15rem">₹19,999</b></p>
+    </div>
+    <div class="sec-visual rv" style="--d:.1s">
+      <div class="lock-card">
+        <div class="fp" id="fp"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M20 50c-3-5-4-11-4-18a16 16 0 0 1 32 0"/><path d="M26 54c-3-6-4-13-4-22a10 10 0 0 1 20 0c0 6-1 11-3 16"/><path d="M32 32c0 9-1 16-5 24"/><path d="M12 40c-1-3-1-5-1-8a21 21 0 0 1 35-16"/></svg><span class="scan"></span></div>
+        <div><p class="lock-state"><i id="lockDot"></i><span id="lockText">Scanning…</span></p><p class="lock-meta">Front Door · Fingerprint + PIN + App</p></div>
+      </div>
+      <div class="cams">
+        <figure class="cam"><img data-cam src="assets/img/render/hero_day-960.webp" alt="Living room camera feed" loading="lazy" decoding="async" style="object-position:62% 60%"><figcaption><span class="rec"></span>LIVING<time class="cam-clock"></time></figcaption></figure>
+        <figure class="cam"><img data-cam src="assets/img/render/curtain-720-15.webp" alt="Window camera feed" loading="lazy" decoding="async"><figcaption><span class="rec"></span>WINDOW · E<time class="cam-clock"></time></figcaption></figure>
+        <figure class="cam night"><img data-cam src="assets/img/render/mood_cool-960.webp" alt="Lounge camera at night" loading="lazy" decoding="async" style="object-position:70% 55%"><figcaption><span class="rec"></span>LOUNGE<time class="cam-clock"></time></figcaption></figure>
+        <figure class="cam ir"><img data-cam src="assets/img/render/mood_off-960.webp" alt="Night-vision camera feed" loading="lazy" decoding="async" style="object-position:20% 50%"><figcaption><span class="rec"></span>IR · HALL<time class="cam-clock"></time></figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 SENSORS & GATES ================= -->
+<section class="section section-alt" id="automation" aria-labelledby="auto-title">
+  <div class="container">
+    <div class="sec-head rv">
+      <p class="eyebrow"><span class="num">04</span> Motion Sensors &amp; Gate Automation</p>
+      <h2 id="auto-title">A home that reacts before you ask.</h2>
+      <p class="lead">Presence sensors and automated gates turn arriving home into one seamless moment.</p>
+    </div>
+    <div class="auto-grid">
+      <article class="card flow-card rv">
+        <h3>Arriving home</h3>
+        <ol class="flow">
+          <li><span class="node"><svg viewBox="0 0 24 24"><path d="M5 17h14M6 17l1.5-5h9L18 17M7 17v2M17 17v2"/><circle cx="8" cy="14.5" r=".5"/><circle cx="16" cy="14.5" r=".5"/></svg></span><div><b>Car recognised</b><small>Gate camera reads your plate</small></div></li>
+          <li><span class="node"><svg viewBox="0 0 24 24"><path d="M3 21V5M21 21V5M3 9h18M8 9v12M16 9v12"/></svg></span><div><b>Gate opens</b><small>Swing or sliding motor</small></div></li>
+          <li><span class="node"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg></span><div><b>Porch lights on</b><small>Pathway &amp; foyer scene</small></div></li>
+          <li><span class="node"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0"/></svg></span><div><b>Door unlocks</b><small>Only when your phone is near</small></div></li>
+        </ol>
+      </article>
+      <article class="card gate-card rv" style="--d:.06s">
+        <div>
+          <p class="gate-status"><span class="gs-dot"></span><span id="gateStatus">Monitoring driveway</span></p>
+          <div class="gate-visual" id="gateVisual" aria-hidden="true">
+            <div class="gate-car"><span class="car-roof"></span><span class="car-body"><i class="hl hl-l"></i><i class="hl hl-r"></i></span></div>
+            <div class="gate-post"><span class="lamp"></span></div>
+            <div class="gate-leaf leaf-l"></div><div class="gate-leaf leaf-r"></div>
+            <div class="gate-post"><span class="lamp"></span></div>
+            <div class="gate-beam"></div>
+          </div>
+        </div>
+        <div>
+          <h3>Smart gate automation</h3>
+          <p>Swing and sliding gate motors with app, remote, RFID and number-plate control. Obstacle sensors stop the gate instantly.</p>
+          <p class="from" style="margin-top:16px">Starts from <span class="price" data-inr="₹34,999" data-usd="$449">₹34,999</span> <small>per gate</small></p>
+        </div>
+      </article>
+      <article class="card rv" style="--d:.1s"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M8 8a6 6 0 0 0 0 8M16 8a6 6 0 0 1 0 8M5 5a10 10 0 0 0 0 14M19 5a10 10 0 0 1 0 14"/></svg></div><h3>Motion &amp; presence</h3><p>mmWave sensors know a room is occupied even when you sit still. From <span class="price" data-inr="₹2,499" data-usd="$39">₹2,499</span>.</p></article>
+      <article class="card rv" style="--d:.14s"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div><h3>Energy auto-off</h3><p>Lights and ACs switch off in empty rooms — up to 30% lower bills.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOLUTIONS ================= -->
+<section class="section" id="solutions" aria-labelledby="sol-title">
+  <div class="container">
+    <div class="sec-head center rv">
+      <p class="eyebrow">Solutions</p>
+      <h2 id="sol-title">Designed for how you live.</h2>
+    </div>
+    <div class="sol-grid">
+      <article class="sol rv"><h3>Apartments</h3><p>Wireless retrofits for 1–3 BHK homes. No breaking walls.</p></article>
+      <article class="sol rv" style="--d:.05s"><h3>Villas</h3><p>Multi-floor lighting, perimeter security and gate automation.</p></article>
+      <article class="sol rv" style="--d:.1s"><h3>New builds</h3><p>Planned with your architect for invisible, future-ready wiring.</p></article>
+      <article class="sol rv" style="--d:.15s"><h3>Offices</h3><p>Access control, occupancy lighting and energy reports.</p></article>
+    </div>
+    <ol class="steps">
+      <li class="rv"><h3>Consult</h3><p>A free call or site visit to understand your space.</p></li>
+      <li class="rv" style="--d:.05s"><h3>Design</h3><p>A room-by-room plan with a clear, itemised quote.</p></li>
+      <li class="rv" style="--d:.1s"><h3>Install</h3><p>Certified engineers install and configure in 1–5 days.</p></li>
+      <li class="rv" style="--d:.15s"><h3>Support</h3><p>App onboarding, warranty and 24/7 remote help.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= PRICING ================= -->
+<section class="section section-alt" id="pricing" aria-labelledby="price-title">
+  <div class="container">
+    <div class="sec-head center rv">
+      <p class="eyebrow">Pricing</p>
+      <h2 id="price-title">Transparent pricing. Tailored homes.</h2>
+      <p class="lead">Start with one room or automate the whole estate. A free site survey confirms your final quote.</p>
+      <div class="cur-toggle" role="group" aria-label="Currency">
+        <button type="button" data-cur="inr" aria-pressed="true">₹ INR</button>
+        <button type="button" data-cur="usd" aria-pressed="false">$ USD</button>
+      </div>
+    </div>
+
+    <h3 class="sub-title">Individual products</h3>
+    <ul class="alacarte rv">
+      <li><span>Touch Panels &amp; Lighting</span><em>from <b class="price" data-inr="₹9,999" data-usd="$149">₹9,999</b> / room</em></li>
+      <li><span>Automatic Curtains</span><em>from <b class="price" data-inr="₹8,999" data-usd="$129">₹8,999</b> / window</em></li>
+      <li><span>Smart Door Locks</span><em>from <b class="price" data-inr="₹14,999" data-usd="$199">₹14,999</b> / door</em></li>
+      <li><span>CCTV Security</span><em>from <b class="price" data-inr="₹19,999" data-usd="$249">₹19,999</b> / 4-cam kit</em></li>
+      <li><span>Motion Sensors</span><em>from <b class="price" data-inr="₹2,499" data-usd="$39">₹2,499</b> / sensor</em></li>
+      <li><span>Gate Automation</span><em>from <b class="price" data-inr="₹34,999" data-usd="$449">₹34,999</b> / gate</em></li>
+    </ul>
+
+    <h3 class="sub-title">Whole-home packages</h3>
+    <div class="plans">
+      <article class="plan rv">
+        <p class="plan-tier">Essential</p><h3>Starter Smart Pack</h3><p class="plan-fit">1-BHK / Apartment</p>
+        <p class="plan-price"><small>Starts from</small><b class="price" data-inr="₹59,999" data-usd="$799">₹59,999</b></p>
+        <ul><li>Touch panels in up to 3 rooms</li><li>Automatic curtains (2 windows)</li><li>Smart door lock</li><li>Voice assistant setup</li><li>1-year warranty</li></ul>
+        <a href="#contact" class="btn btn-ghost" data-plan="Starter Smart Pack">Get a Quote</a>
+      </article>
+      <article class="plan featured rv" style="--d:.06s">
+        <span class="badge">Most popular</span>
+        <p class="plan-tier">Advanced</p><h3>Advanced Comfort Pack</h3><p class="plan-fit">3-BHK / Villa</p>
+        <p class="plan-price"><small>Starts from</small><b class="price" data-inr="₹1,89,999" data-usd="$2,499">₹1,89,999</b></p>
+        <ul><li>Everything in Starter</li><li>Glass touch panels throughout</li><li>Motion sensors &amp; scenes</li><li>4-camera CCTV + cloud</li><li>2-year warranty, priority support</li></ul>
+        <a href="#contact" class="btn btn-primary" data-plan="Advanced Comfort Pack">Get a Quote</a>
+      </article>
+      <article class="plan rv" style="--d:.12s">
+        <p class="plan-tier">Complete Ecosystem</p><h3>Edge Ultimate Ecosystem</h3><p class="plan-fit">Full smart estate</p>
+        <p class="plan-price"><small>Bespoke</small><b>Custom Pricing</b></p>
+        <ul><li>Everything in Advanced</li><li>Smart gate automation</li><li>Multi-zone lighting &amp; climate</li><li>Centralised CCTV</li><li>Dedicated project manager</li></ul>
+        <a href="#contact" class="btn btn-ghost" data-plan="Edge Ultimate Ecosystem">Book a Site Visit</a>
+      </article>
+    </div>
+    <p class="fine">Indicative starting prices including standard installation in Delhi NCR. GST extra.</p>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section" id="contact" aria-labelledby="contact-title">
+  <div class="container contact-grid">
+    <div class="rv">
+      <p class="eyebrow">Contact Us</p>
+      <h2 id="contact-title">Book your free consultation.</h2>
+      <p class="lead">Tell us about your space. A specialist will call within one working day with ideas and an estimate.</p>
+      <ul class="contact-list">
+        <li><span>Email</span><a href="mailto:edgesmartspace@gmail.com">edgesmartspace@gmail.com</a></li>
+        <li><span>Phone</span><a href="tel:+919876543210">+91 98765 43210</a></li>
+        <li><span>WhatsApp</span><a class="wa-link" href="#" target="_blank" rel="noopener">Chat instantly</a></li>
+        <li><span>Hours</span><span style="color:var(--text)">Mon–Sat, 10 AM – 7 PM</span></li>
+      </ul>
+    </div>
+
+    <form class="form rv" id="contactForm" action="https://api.web3forms.com/submit" method="post" novalidate style="--d:.08s">
+      <!-- Form delivery: get a free key at https://web3forms.com (use edgesmartspace@gmail.com) and paste it here -->
+      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+      <input type="hidden" name="subject" value="New consultation request — Edge Smart Space website">
+      <input type="hidden" name="from_name" value="Edge Smart Space Website">
+      <div class="hp" aria-hidden="true"><label>Leave empty <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label></div>
+      <div class="field-row">
+        <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" type="text" required autocomplete="name"><small class="err"></small></div>
+        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel"><small class="err"></small></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" required autocomplete="email"><small class="err"></small></div>
+        <div class="field"><label for="f-property">Property</label>
+          <select id="f-property" name="property" required><option value="">Select…</option><option>Apartment (1–2 BHK)</option><option>Apartment (3+ BHK)</option><option>Villa / Bungalow</option><option>New Construction</option><option>Office / Commercial</option></select><small class="err"></small></div>
+      </div>
+      <fieldset class="field"><legend>Interested in</legend>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" name="interests[]" value="Touch Panels"><span>Touch Panels</span></label>
+          <label class="chip"><input type="checkbox" name="interests[]" value="Automatic Curtains"><span>Curtains</span></label>
+          <label class="chip"><input type="checkbox" name="interests[]" value="Smart Locks"><span>Locks</span></label>
+          <label class="chip"><input type="checkbox" name="interests[]" value="CCTV"><span>CCTV</span></label>
+          <label class="chip"><input type="checkbox" name="interests[]" value="Sensors"><span>Sensors</span></label>
+          <label class="chip"><input type="checkbox" name="interests[]" value="Gate Automation"><span>Gates</span></label>
+        </div>
+      </fieldset>
+      <div class="field"><label for="f-plan">Package</label>
+        <select id="f-plan" name="plan"><option value="">Not sure yet</option><option>Starter Smart Pack</option><option>Advanced Comfort Pack</option><option>Edge Ultimate Ecosystem</option></select></div>
+      <div class="field"><label for="f-msg">Project details <span class="muted">(optional)</span></label><textarea id="f-msg" name="message" rows="3" placeholder="e.g. 3-BHK in Gurugram — touch panels and curtains in the living room."></textarea></div>
+      <label class="consent"><input type="checkbox" name="consent" value="1" required><span>I agree to be contacted about my enquiry.</span></label>
+      <small class="err" id="consentErr"></small>
+      <button type="submit" class="btn btn-primary btn-block" id="submitBtn"><span>Request Consultation</span><span class="spinner" aria-hidden="true"></span></button>
+      <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer" aria-labelledby="footer-title">
+  <h2 id="footer-title" class="sr-only">Edge Smart Space</h2>
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-id">
+        <a href="#home" class="foot-logo" aria-label="Edge Smart Space — back to top"><svg role="img" aria-label="Edge Smart Space"><use href="#ess-logo"/></svg></a>
+        <span class="foot-divider" aria-hidden="true"></span>
+        <ul class="foot-social" aria-label="Social media">
+          <li><a href="https://facebook.com/edgesmartspace" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5a.5.5 0 0 1 .5-.5z"/></svg></a></li>
+          <li><a href="https://instagram.com/edgesmartspace" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" class="st"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.8" cy="7.2" r=".9" class="dot"/></svg></a></li>
+          <li><a href="https://linkedin.com/company/edgesmartspace" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M6.5 9.5h-3V20h3zM5 4a1.75 1.75 0 1 0 0 3.5A1.75 1.75 0 0 0 5 4zm4.5 5.5V20h3v-5.4c0-1.5.8-2.4 2-2.4s1.8.8 1.8 2.4V20h3v-6c0-3.1-1.7-4.7-4-4.7a3.6 3.6 0 0 0-2.9 1.4V9.5z"/></svg></a></li>
+          <li><a href="https://x.com/edgesmartspace" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M17.8 3.5h3.1l-6.8 7.7 8 10.3h-6.2l-4.9-6.3-5.6 6.3H2.3l7.2-8.2L1.8 3.5h6.4l4.4 5.8zm-1.1 16.2h1.7L7.4 5.2H5.6z"/></svg></a></li>
+        </ul>
+      </div>
+      <div class="foot-apps">
+        <!-- App badges: point these at your app listings, or delete this block if there is no app -->
+        <a class="app-badge" href="#" aria-label="Get it on Google Play">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34A853" d="M3.6 2.3 13.4 12l-9.8 9.7c-.4-.2-.6-.6-.6-1.1V3.4c0-.5.2-.9.6-1.1z"/><path fill="#FBBC04" d="m16.6 8.8-3.2 3.2 3.2 3.2 3.7-2.1c.9-.5.9-1.7 0-2.2z"/><path fill="#4285F4" d="M3.6 21.7 13.4 12l3.2 3.2-11.4 6.5c-.5.3-1.1.3-1.6 0z"/><path fill="#EA4335" d="M3.6 2.3c.5-.3 1.1-.3 1.6 0l11.4 6.5-3.2 3.2z"/></svg>
+          <span><small>GET IT ON</small>Google Play</span>
+        </a>
+        <a class="app-badge" href="#" aria-label="Download on the App Store">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9a4.8 4.8 0 0 0-3.8-2c-1.6-.2-3.1.9-3.9.9s-2-.9-3.4-.9a5 5 0 0 0-4.2 2.6c-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6s1.8-.8 3.3-.8 2 .8 3.4.8 2.2-1.3 3.1-2.5a10 10 0 0 0 1.4-2.9 4.5 4.5 0 0 1-2.6-4.1zM13.9 5a4.4 4.4 0 0 0 1-3.3 4.6 4.6 0 0 0-3 1.6 4.2 4.2 0 0 0-1.1 3.2A3.8 3.8 0 0 0 13.9 5z"/></svg>
+          <span><small>Download on the</small>App Store</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="foot-cols">
+      <nav aria-label="Products"><h3>Products</h3><ul>
+        <li><a href="#touch-panels">Touch Panels &amp; Lighting</a></li>
+        <li><a href="#curtains">Automatic Curtains</a></li>
+        <li><a href="#security">Smart Locks &amp; CCTV</a></li>
+        <li><a href="#automation">Motion Sensors</a></li>
+        <li><a href="#automation">Gate Automation</a></li>
+      </ul></nav>
+      <nav aria-label="Solutions"><h3>Solutions</h3><ul>
+        <li><a href="#solutions">Apartment Automation</a></li>
+        <li><a href="#solutions">Villa Automation</a></li>
+        <li><a href="#solutions">New Construction</a></li>
+        <li><a href="#solutions">Office Automation</a></li>
+      </ul></nav>
+      <nav aria-label="Quick links"><h3>Quick Links</h3><ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Book a Consultation</a></li>
+        <li><a class="wa-link" href="#" target="_blank" rel="noopener">WhatsApp Us</a></li>
+        <li><a href="sitemap.xml">Sitemap</a></li>
+      </ul></nav>
+      <div><h3>Contact Us</h3>
+        <ul class="foot-contact">
+          <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
+            <address>Your Street Address,<br>New Delhi, India&nbsp;-&nbsp;110001</address></li>
+          <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.4L3.6 7v.2L12 14l8.4-6.8V7z"/></svg></span>
+            <a href="mailto:edgesmartspace@gmail.com">edgesmartspace@gmail.com</a></li>
+          <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.2.2 2.5.6 3.6a1 1 0 0 1-.25 1z"/></svg></span>
+            <a href="tel:+919876543210">+91 98765 43210</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bar">
+    <p>© <span id="year">2026</span> Edge Smart Space. All Rights Reserved. <a href="#">Privacy Policy</a></p>
   </div>
 </footer>
 
-<!-- Floating WhatsApp widget -->
-<div class="wa-widget" id="waWidget">
+<button class="to-top" id="toTop" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg></button>
+
+<div class="wa" id="wa">
   <div class="wa-bubble" id="waBubble" role="dialog" aria-label="WhatsApp chat" hidden>
-    <button class="wa-close" id="waClose" aria-label="Close">×</button>
+    <button class="wa-close" id="waClose" type="button" aria-label="Close">×</button>
     <p class="wa-title">Edge Smart Space</p>
     <p class="wa-sub">Typically replies within minutes</p>
-    <div class="wa-msg">Hi there 👋<br>How can we help automate your home?</div>
-    <a class="btn btn-wa" href="https://wa.me/919876543210?text=Hi%20Edge%20Smart%20Space%21%20I%27m%20interested%20in%20automating%20my%20home.%20Can%20you%20help%20me%20get%20started%3F" target="_blank" rel="noopener">Start Chat</a>
+    <div class="wa-msg">Hi there 👋 How can we help automate your home?</div>
+    <a class="btn btn-wa wa-link" href="#" target="_blank" rel="noopener">Start Chat</a>
   </div>
-  <button class="wa-fab" id="waFab" aria-label="Chat with us on WhatsApp" aria-controls="waBubble" aria-expanded="false">
+  <button class="wa-fab" id="waFab" type="button" aria-label="Chat with us on WhatsApp" aria-controls="waBubble" aria-expanded="false">
     <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7a10.7 10.7 0 0 1-5.5-1.5l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-1-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8 1 3.9.8a3.3 3.3 0 0 0 2.1-1.5 2.7 2.7 0 0 0 .2-1.5c-.1-.1-.3-.2-.7-.4z"/></svg>
   </button>
 </div>
 
-<!-- Libraries (deferred) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-<script src="assets/js/hero3d.js" defer></script>
 <script src="assets/js/main.js" defer></script>
 </body>
 </html>
