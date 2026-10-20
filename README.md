@@ -45,3 +45,7 @@ Uses Web3Forms (free). Get a key at https://web3forms.com with edgesmartspace@gm
 ## Replacing the renders with your own photos
 Keep the same file names and sizes (1600 / 960 px wide, 16:9). For the mood switch to look right, all five mood
 images must be the same room from the same camera position.
+
+## Updating the live site (cache busting)
+Browsers keep old copies of `style.css` and `main.js`. Whenever you change either file, bump the version number in
+`index.html` (e.g. `style.css?v=20261020` -> `style.css?v=20261105`) so every visitor gets the new file immediately.
