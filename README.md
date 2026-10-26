@@ -38,9 +38,17 @@ Connected to Web3Forms: submissions are emailed to edgesmartspace@gmail.com (acc
 
 ## Things to edit before launch
 - Phones: +91 93158 24206 and +91 96256 93696. WhatsApp chat opens +91 93158 24206 (`WHATSAPP` in `assets/js/main.js`)
-- Domain `https://www.edgesmartspace.com` (canonical, Open Graph, JSON-LD, sitemap.xml, robots.txt)
-- Street address: removed for now. To add it later, add a row to the footer's Contact Us list and a streetAddress/postalCode to the JSON-LD block
-- Prices: visible text plus `data-inr` / `data-usd` on each price
+- Domain: `https://edgesmartspace.com` (no www) in canonical, Open Graph, JSON-LD, sitemap.xml, robots.txt and `CNAME`
+- Street address: removed for now. When you have one, add it to the footer and a `streetAddress`/`postalCode` to the JSON-LD
+  (it must match your Google Business Profile exactly)
+- Prices: the three packages (₹24,999 / ₹44,999 / ₹74,999 + GST) appear on the home page, every city page and the JSON-LD
+
+## SEO files
+- `home-automation-delhi/`, `-noida/`, `-gurgaon/`, `-ghaziabad/`, `-faridabad/` — city landing pages (each `index.html`)
+- `privacy/` — privacy policy, `404.html` — not-found page (GitHub Pages uses it automatically)
+- `robots.txt`, `sitemap.xml` — when you add a page, add its URL to the sitemap and update `<lastmod>`
+- `CNAME` — tells GitHub Pages the custom domain; `.nojekyll` — serve files as-is
+- Every page has its own `<title>`, meta description, canonical URL and JSON-LD; keep them unique if you copy a page
 
 ## Replacing the renders with your own photos
 Keep the same file names and sizes (1600 / 960 px wide, 16:9). For the mood switch to look right, all five mood
@@ -48,4 +56,4 @@ images must be the same room from the same camera position.
 
 ## Updating the live site (cache busting)
 Browsers keep old copies of `style.css` and `main.js`. Whenever you change either file, bump the version number in
-`index.html` (e.g. `style.css?v=20261020` -> `style.css?v=20261105`) so every visitor gets the new file immediately.
+every `.html` page (e.g. `style.css?v=20261020` -> `style.css?v=20261105`) so every visitor gets the new file immediately.

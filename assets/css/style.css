@@ -608,3 +608,65 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border: 0; bo
 .foot-contact .phones a { color: rgba(255, 255, 255, .92); }
 .contact-list .phones { color: var(--text); font-size: 1rem; }
 .contact-list .phones a { color: var(--text); }
+
+/* ================= SEO pass: areas, FAQ, city pages, prose ================= */
+.hero h1 .hero-eyebrow { display: flex; width: fit-content; line-height: 1.4; margin-bottom: 26px; }
+.area-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; }
+.area-card { display: flex; flex-direction: column; gap: 8px; color: inherit; text-decoration: none; transition: border-color .25s var(--ease), transform .25s var(--ease), box-shadow .25s var(--ease); }
+.area-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: var(--shadow-sm); }
+.area-card h3 { margin: 0; font-size: 1.05rem; }
+.area-card p { flex: 1; }
+.area-card .link-arrow { margin-top: 6px; font-size: .9rem; }
+
+.narrow-faq { max-width: 860px; }
+.faq { display: grid; gap: 12px; }
+.faq-item { border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); }
+.faq-item summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 20px 22px; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary h3 { margin: 0; font-size: 1.02rem; line-height: 1.4; letter-spacing: -.01em; }
+.faq-item summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: var(--radius-sm); }
+.faq-ic { flex: none; position: relative; width: 14px; height: 14px; }
+.faq-ic::before, .faq-ic::after { content: ''; position: absolute; left: 0; top: 6px; width: 14px; height: 2px; border-radius: 2px; background: var(--accent); transition: transform .3s var(--ease); }
+.faq-ic::after { transform: rotate(90deg); }
+.faq-item[open] .faq-ic::after { transform: rotate(0); }
+.faq-item p { margin: 0; padding: 0 22px 22px; color: var(--muted); line-height: 1.7; }
+
+/* city landing pages */
+.subpage main { padding-top: var(--header-h); }
+.city-hero { padding: clamp(40px, 6vw, 88px) 0 clamp(56px, 7vw, 100px); }
+.city-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
+.city-hero h1 { font-size: clamp(2.3rem, 5vw, 4rem); font-weight: 500; line-height: 1.06; margin-bottom: 22px; }
+.city-hero .lead { margin-bottom: 32px; }
+.city-hero .hero-trust { margin-top: 36px; }
+.city-photo { margin: 0; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); aspect-ratio: 16 / 10; background: var(--bg-2); }
+.city-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.crumbs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; font-size: .85rem; color: var(--dim); }
+.crumbs a { color: var(--muted); text-decoration: none; }
+.crumbs a:hover { color: var(--accent); }
+.city-split { align-items: start; }
+.city-intro p { color: var(--muted); line-height: 1.75; }
+.city-points { display: grid; gap: 14px; }
+.locality-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.locality-list li { padding: 9px 16px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--surface); font-size: .92rem; }
+.nearby { padding: 56px 0; }
+.nearby-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 14px; }
+.nearby-list a { display: inline-block; padding: 9px 16px; border-radius: 999px; border: 1px solid var(--line-2); color: var(--text); text-decoration: none; font-size: .92rem; transition: border-color .2s, color .2s; }
+.nearby-list a:hover { border-color: var(--accent); color: var(--accent); }
+
+/* privacy / 404 */
+.prose-section { padding-top: clamp(48px, 7vw, 96px); }
+.prose { max-width: 760px; }
+.prose h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 500; }
+.prose h2 { font-size: 1.3rem; margin-top: 36px; }
+.prose p { color: var(--muted); line-height: 1.75; }
+.prose .nearby-list { margin-top: 24px; }
+
+@media (max-width: 900px) {
+  .city-hero-grid { grid-template-columns: 1fr; }
+  .city-photo { order: -1; }
+}
+@media (max-width: 600px) {
+  .faq-item summary { padding: 18px; }
+  .faq-item p { padding: 0 18px 18px; }
+  .city-hero .hero-ctas .btn { flex: 1 1 100%; justify-content: center; }
+}

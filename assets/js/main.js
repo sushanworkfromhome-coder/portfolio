@@ -11,14 +11,14 @@
 
   /* ---------- Theme switch (light default, remembered) ---------- */
   var sw = $('#themeSwitch');
-  function syncSwitch() { sw.setAttribute('aria-checked', String(root.getAttribute('data-theme') === 'dark')); }
+  function syncSwitch() { if (sw) sw.setAttribute('aria-checked', String(root.getAttribute('data-theme') === 'dark')); }
   function setTheme(next) {
     root.setAttribute('data-theme', next);
     try { localStorage.setItem('ess-theme', next); } catch (e) {}
     syncSwitch();
   }
   syncSwitch();
-  sw.addEventListener('click', function (e) {
+  if (sw) sw.addEventListener('click', function (e) {
     var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     // Circular reveal where supported, gentle colour fade otherwise
     if (doc.startViewTransition && !reduce) {
@@ -51,9 +51,9 @@
     doc.body.style.overflow = open ? 'hidden' : '';
     if (open) header.classList.add('scrolled'); else onScroll();
   }
-  toggle.addEventListener('click', function () { menu(!nav.classList.contains('open')); });
-  $$('a', nav).forEach(function (a) { a.addEventListener('click', function () { menu(false); }); });
-  doc.addEventListener('keydown', function (e) { if (e.key === 'Escape') { menu(false); closeWA(); } });
+  if (toggle && nav) toggle.addEventListener('click', function () { menu(!nav.classList.contains('open')); });
+  if (nav) $$('a', nav).forEach(function (a) { a.addEventListener('click', function () { menu(false); }); });
+  doc.addEventListener('keydown', function (e) { if (e.key === 'Escape') { if (nav) menu(false); closeWA(); } });
 
   // Active nav link
   var sections = { home: 'home', products: 'products', 'touch-panels': 'products', curtains: 'products', security: 'products', automation: 'products', solutions: 'solutions', pricing: 'pricing', contact: 'contact' };
@@ -62,7 +62,7 @@
       en.forEach(function (e) {
         if (!e.isIntersecting) return;
         var k = sections[e.target.id];
-        $$('a', nav).forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + k); });
+        if (nav) $$('a', nav).forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + k); });
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
     Object.keys(sections).forEach(function (id) { var el = doc.getElementById(id); if (el) navIO.observe(el); });
@@ -84,6 +84,7 @@
     movie: { name: 'Movie',        note: 'cove 15% · warm underglow' },
     off:   { name: 'All Off',      note: 'everything off · panel nightlight' }
   };
+  if ($('#tpStage')) (function touchPanel() {
   var stage = $('#tpStage'), imgs = $$('.tp-img'), keys = $$('.tp-key[data-mood]'), dim = $('#tpDim'), dimOut = $('#tpDimOut'), statusEl = $('#tpStatus');
   var current = 'day';
   function loadMood(img) {
@@ -118,6 +119,7 @@
   }
   keys.forEach(function (k) { k.addEventListener('click', function () { setMood(k.dataset.mood); }); });
   dim.addEventListener('input', applyDim); applyDim();
+  })();
 
   /* ---------- 02 Curtains: scroll-driven image sequence ---------- */
   (function curtains() {
@@ -206,11 +208,11 @@
   function two(n) { return (n < 10 ? '0' : '') + n; }
   function tick() {
     var d = new Date();
-    tpClock.textContent = two(d.getHours()) + ':' + two(d.getMinutes());
+    if (tpClock) tpClock.textContent = two(d.getHours()) + ':' + two(d.getMinutes());
     var s = two(d.getHours()) + ':' + two(d.getMinutes()) + ':' + two(d.getSeconds());
     camClocks.forEach(function (c) { c.textContent = s; });
   }
-  tick(); setInterval(tick, 1000);
+  if (tpClock || camClocks.length) { tick(); setInterval(tick, 1000); }
 
   /* ---------- 03 Lock cycle ---------- */
   var fp = $('#fp'), lockText = $('#lockText'), lockDot = $('#lockDot');
@@ -218,7 +220,7 @@
     fp.classList.remove('ok'); lockDot.classList.remove('ok'); lockText.textContent = 'Scanning…';
     setTimeout(function () { fp.classList.add('ok'); lockDot.classList.add('ok'); lockText.textContent = 'Access granted · Unlocked'; }, 2200);
   }
-  lockCycle(); setInterval(lockCycle, 5200);
+  if (fp) { lockCycle(); setInterval(lockCycle, 5200); }
 
   /* ---------- 04 Gate + arriving-home sequence (time based, plays while visible) ---------- */
   (function gate() {
@@ -268,11 +270,14 @@
   $$('.wa-link').forEach(function (a) { a.href = waHref; });
   var waFab = $('#waFab'), waBubble = $('#waBubble');
   function openWA() { waBubble.hidden = false; waFab.setAttribute('aria-expanded', 'true'); }
-  function closeWA() { if (waBubble) { waBubble.hidden = true; waFab.setAttribute('aria-expanded', 'false'); } }
-  waFab.addEventListener('click', function () { waBubble.hidden ? openWA() : closeWA(); });
-  $('#waClose').addEventListener('click', closeWA);
+  function closeWA() { if (waBubble && waFab) { waBubble.hidden = true; waFab.setAttribute('aria-expanded', 'false'); } }
+  if (waFab && waBubble) {
+    waFab.addEventListener('click', function () { waBubble.hidden ? openWA() : closeWA(); });
+    $('#waClose').addEventListener('click', closeWA);
+  }
 
   /* ---------- Contact form (Web3Forms, mailto fallback) ---------- */
+  if ($('#contactForm')) (function contactForm() {
   var form = $('#contactForm'), status = $('#formStatus'), btn = $('#submitBtn'), startedAt = Date.now();
   var rules = {
     name: function (v) { return v.trim().length >= 2 || 'Please enter your name.'; },
@@ -301,6 +306,8 @@
     var data = { name: f.name.value.trim(), phone: f.phone.value.trim(), email: f.email.value.trim(), property: f.property.value,
       package: f.plan.value || 'Not sure yet', interests: $$('input[name="interests[]"]:checked', form).map(function (c) { return c.value; }).join(', ') || '—',
       message: f.message.value.trim() || '(no details provided)' };
+    if (f.city && f.city.value) data.city = f.city.value;
+    data.page = location.pathname;
     var key = f.access_key.value;
     if (!key || key.indexOf('YOUR_') === 0) {
       var body = Object.keys(data).map(function (k) { return k.charAt(0).toUpperCase() + k.slice(1) + ': ' + data[k]; }).join('\n');
@@ -309,15 +316,16 @@
     }
     btn.classList.add('loading'); btn.disabled = true;
     fetch(form.action, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify(Object.assign({ access_key: key, subject: 'New Lead: ' + data.name + ' — ' + data.property, from_name: f.from_name.value, replyto: data.email, botcheck: false }, data)) })
+      body: JSON.stringify(Object.assign({ access_key: key, subject: 'New Lead: ' + data.name + ' — ' + data.property + (data.city ? ' — ' + data.city : ''), from_name: f.from_name.value, replyto: data.email, botcheck: false }, data)) })
       .then(function (r) { return r.json(); })
       .then(function (res) {
-        if (res.success) { form.reset(); startedAt = Date.now(); status.className = 'form-status ok'; status.textContent = 'Thank you, ' + data.name + '! A specialist will call you within one working day.'; }
+        if (res.success) { form.reset(); startedAt = Date.now(); status.className = 'form-status ok'; status.textContent = 'Thank you, ' + data.name + '! A specialist will call you shortly.'; }
         else { status.className = 'form-status fail'; status.textContent = res.message || 'Something went wrong. Please try WhatsApp.'; }
       })
       .catch(function () { status.className = 'form-status fail'; status.textContent = 'Network error. Please try again or message us on WhatsApp.'; })
       .then(function () { btn.classList.remove('loading'); btn.disabled = false; });
   });
+  })();
 
   var yr = $('#year'); if (yr) yr.textContent = new Date().getFullYear();
 })();
