@@ -39,7 +39,7 @@ Connected to Web3Forms: submissions are emailed to edgesmartspace@gmail.com (acc
 ## Things to edit before launch
 - Phones: +91 93158 24206 and +91 96256 93696. WhatsApp chat opens +91 93158 24206 (`WHATSAPP` in `assets/js/main.js`)
 - Domain `https://www.edgesmartspace.com` (canonical, Open Graph, JSON-LD, sitemap.xml, robots.txt)
-- Street address in the JSON-LD block
+- Street address: removed for now. To add it later, add a row to the footer's Contact Us list and a streetAddress/postalCode to the JSON-LD block
 - Prices: visible text plus `data-inr` / `data-usd` on each price
 
 ## Replacing the renders with your own photos
