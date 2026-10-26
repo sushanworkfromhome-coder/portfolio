@@ -6,7 +6,7 @@
   var $$ = function (s, c) { return Array.prototype.slice.call((c || doc).querySelectorAll(s)); };
   var reduce = root.classList.contains('no-motion');
   var CONTACT_EMAIL = 'edgesmartspace@gmail.com';
-  var WHATSAPP = '919876543210';
+  var WHATSAPP = '919315824206';
   var WA_MSG = "Hi Edge Smart Space! I'm interested in automating my home. Can you help me get started?";
 
   /* ---------- Theme switch (light default, remembered) ---------- */
@@ -300,7 +300,7 @@
     var f = form.elements;
     var data = { name: f.name.value.trim(), phone: f.phone.value.trim(), email: f.email.value.trim(), property: f.property.value,
       package: f.plan.value || 'Not sure yet', interests: $$('input[name="interests[]"]:checked', form).map(function (c) { return c.value; }).join(', ') || '—',
-      message: f.message.value.trim() };
+      message: f.message.value.trim() || '(no details provided)' };
     var key = f.access_key.value;
     if (!key || key.indexOf('YOUR_') === 0) {
       var body = Object.keys(data).map(function (k) { return k.charAt(0).toUpperCase() + k.slice(1) + ': ' + data[k]; }).join('\n');

@@ -602,3 +602,9 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border: 0; bo
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
 }
+
+/* two phone numbers stacked */
+.phones { display: grid; gap: 4px; }
+.foot-contact .phones a { color: rgba(255, 255, 255, .92); }
+.contact-list .phones { color: var(--text); font-size: 1rem; }
+.contact-list .phones a { color: var(--text); }

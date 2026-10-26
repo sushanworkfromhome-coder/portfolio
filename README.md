@@ -33,11 +33,11 @@ A 16-frame render sequence is drawn on a canvas and blended frame-to-frame as yo
 Phones get lighter 720px frames. With reduced-motion or no JavaScript, a still of the open curtains is shown with the text.
 
 ## Contact form
-Uses Web3Forms (free). Get a key at https://web3forms.com with edgesmartspace@gmail.com, then replace
-`YOUR_WEB3FORMS_ACCESS_KEY` in `index.html`. Until then the form opens the visitor's email app pre-filled.
+Connected to Web3Forms: submissions are emailed to edgesmartspace@gmail.com (access key is in the hidden
+`access_key` field in `index.html`; Web3Forms keys are designed to be public).
 
 ## Things to edit before launch
-- Phone `+91 98765 43210` and WhatsApp number (`WHATSAPP` at the top of `assets/js/main.js`)
+- Phones: +91 93158 24206 and +91 96256 93696. WhatsApp chat opens +91 93158 24206 (`WHATSAPP` in `assets/js/main.js`)
 - Domain `https://www.edgesmartspace.com` (canonical, Open Graph, JSON-LD, sitemap.xml, robots.txt)
 - Street address in the JSON-LD block
 - Prices: visible text plus `data-inr` / `data-usd` on each price
