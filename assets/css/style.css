@@ -670,3 +670,9 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border: 0; bo
   .faq-item p { padding: 0 18px 18px; }
   .city-hero .hero-ctas .btn { flex: 1 1 100%; justify-content: center; }
 }
+.prose ul { color: var(--muted); line-height: 1.75; padding-left: 1.25em; margin: 0 0 1em; }
+.prose li { margin-bottom: 6px; }
+.prose strong { color: var(--text); font-weight: 600; }
+.prose h2 { scroll-margin-top: calc(var(--header-h) + 16px); }
+.consent a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 2px; }
+[data-theme="dark"] .consent a { color: var(--accent); }
